@@ -1,0 +1,45 @@
+         ° |---------------------------------------------------------|   |
+         | |  recuerda borrar las carpetas .angular, node_modules!!  |   |
+         | |    o solo dejar las carpetas consejos y src             |   |
+         | |---------------------------------------------------------|   °
+
+----------------------------|
+si git pide email y usuario |
+----------------------------|
+
+coloca tu email y pegalo en terminal
+git config --global user.email "nia.munoz@duocuc.cl"
+
+coloca tu email y pegalo en terminal
+git config --global user.name "niamunoz"
+
+
+
+coloca tu email y pegalo en terminal
+git config --global user.email "youremail@example.com"
+
+coloca tu email y pegalo en terminal
+git config --global user.name "Your Name"
+
+
+----------------------------|
+para recontruir las carpetas|
+----------------------------|
+
+coloca -> npm i <-
+y pegalo en terminal
+
+------------------------|
+para correr el servidor |
+------------------------|
+
+coloca -> ionic serve <-
+y pegalo en terminal
+
+-----------------------------|
+para crear una nueva paguina |
+-----------------------------|
+
+coloca ionic -> ionic generate page pages/nombredelapaguina <-
+
+comando mas corto -> ionic g
