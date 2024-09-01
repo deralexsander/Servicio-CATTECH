@@ -8,7 +8,7 @@ ion-content {
     justify-content: center;
     flex-direction: column;
     width: 100%;            
-    margin-top: 50px; 
+    margin-top: 0px; 
 }
 
 .container-input {
@@ -18,7 +18,7 @@ ion-content {
     flex-direction: column;
     color: #333333;
     padding-inline: 20px;
-    padding-block: 10px; 
+    padding-block: 5px; 
     font-family: sans-serif;
     
     
@@ -32,14 +32,6 @@ ion-input{
     padding: 10px; /* Asegurar que el contenido no toque las esquinas redondeadas */
 }
 
-.text-left{
- color: #413f3f;
- font-family: sans-serif;
- align-items: left;
- padding: 20px;
- text-decoration: none;
-}
-  
 .logo {
     width: 60%;
     height: 60%;
@@ -47,7 +39,7 @@ ion-input{
 
 .login-title{
     color: #413f3f;
-    margin-top: 0%; 
+    margin-top: 0px; 
     margin-bottom: 10px;
     font-size: 2.5em;
     font-family: 'Franklin Gothic Medium';
@@ -59,7 +51,7 @@ ion-input{
     justify-content: center;
     flex-direction: column;
     width: 100%;            
-    margin-top: 35px; 
+    margin-top: 10px; 
 }
 
 .btn-1{
@@ -68,7 +60,6 @@ ion-input{
     width: 60%;
     color: white;
     --background: #23C3FA;
-    margin-top: 10px;
 }
 
 

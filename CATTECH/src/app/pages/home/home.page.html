@@ -1,13 +1,105 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container-end">
+    <img src="assets/isotipos/logo perfil.png" alt="Logo" class="logo" />
+  </div>
+  <div class="title-left">
+    <ion-text>Soporte técnico</ion-text>
+  </div>
+  <div class="title-2-left">
+    <a class="text-left" routerLink="/pruenas"><ion-text>Mis resumenes</ion-text></a>
+  </div>
+
+  <div class="carrucel-wrapper">
+    <div class="carrucel">
+      <ion-card color="success">
+        <ion-card-header>
+          <ion-card-title>Mantención</ion-card-title>
+          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>Listo </ion-card-content>
+      </ion-card>
+  
+      <ion-card color="warning">
+        <ion-card-header>
+          <ion-card-title>Mantención</ion-card-title>
+          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>Diagnostico</ion-card-content>
+      </ion-card>
+  
+      <ion-card color="danger">
+        <ion-card-header>
+          <ion-card-title>Reparación</ion-card-title>
+          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>Trabajando </ion-card-content>
+      </ion-card>
+
+      <ion-card color="primary">
+        <ion-card-header>
+          <ion-card-title>Mantención</ion-card-title>
+          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>Listo </ion-card-content>
+      </ion-card>
+
+      <ion-card color="primary">
+        <ion-card-header>
+          <ion-card-title>Mantención</ion-card-title>
+          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>Listo </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="title-3-left">
+    <ion-text >Herramientas de soporte</ion-text>
+  </div>
+  
+  <div class="container-center-btn">
+    <ion-button class="btn-1">
+      <div class="btn-content">
+        <img src="assets/icon/agendar.png" alt="icon" class="icon" />
+        <span>Agendar visita</span>
+      </div>
+    </ion-button>
+  </div>
+  <div class="container-center-btn">
+    <ion-button class="btn-1">
+      <div class="btn-content">
+        <img src="assets/icon/mantencion.png" alt="icon" class="icon" />
+        <span>Mantención</span>
+      </div>
+    </ion-button>
+  </div>
+  <div class="container-center-btn">
+    <ion-button class="btn-1">
+      <div class="btn-content">
+        <img src="assets/icon/cobertura.png" alt="icon" class="icon" />
+        <span>Cobertura</span>
+      </div>
+    </ion-button>
+  </div>
+  <div class="container-center-btn">
+    <ion-button class="btn-1">
+      <div class="btn-content">
+        <img src="assets/icon/reciclar.png" alt="icon" class="icon" />
+        <span>Reciclar aparato</span>
+      </div>
+    </ion-button>
+  </div>
+  
+  <div class="title-3-left">
+    <ion-text >Ayuda</ion-text>
+  </div>
+  <div class="container-center-btn">
+    <ion-button class="btn-1">
+      <div class="btn-content">
+        <img src="assets/icon/ayuda.png" alt="icon" class="icon-grande" />
+        <span>Contáctate con nosotros</span>
+      </div>
+    </ion-button>
+  </div>
+
 </ion-content>
