@@ -16,10 +16,10 @@ git config --global user.name "niamunoz"
 
 
 coloca tu email y pegalo en terminal
-git config --global user.email "youremail@example.com"
+git config --global user.email "ger.cortes@duocuc.cl"
 
 coloca tu email y pegalo en terminal
-git config --global user.name "Your Name"
+git config --global user.name "German-Cortes"
 
 
 ----------------------------|
