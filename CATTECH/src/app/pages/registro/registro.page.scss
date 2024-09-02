@@ -17,12 +17,9 @@ ion-content {
     justify-content: left;
     flex-direction: column;
     color: #333333;
-    padding-inline: 20px;
-    padding-block: 5px; 
+    padding: 10px 10px 0px 10px; /* | arriba || derecha || abajo || izquierda | */
     font-family: sans-serif;
-    
-    
-    
+
 }
 
 ion-input{

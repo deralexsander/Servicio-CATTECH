@@ -19,36 +19,28 @@ a{
 
 /* titulos-mas pequeños */
 .text{
-    color: #413f3f;
-    font-size: 1.6em;
-    font-family: 'Franklin Gothic Medium';
-  }
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
+}
+
 
   /* container img */
-  .container-center {
-    position: relative; /* Permite el uso de posicionamiento absoluto para las imágenes */
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
-  }
+.container-center {
+  position: relative; /* Permite el uso de posicionamiento absoluto para las imágenes */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  padding: 20px 12px 0px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
   
-  .icon-size-big {
-    position: relative; /* Para que el icono pequeño se posicione en relación a esta imagen */
-    z-index: 1; /* Asegura que esta imagen esté en el fondo */
-    width: 50%;
-    height: 50%;
-  }
+.icon-size {
+  position: relative; /* Para que el icono pequeño se posicione en relación a esta imagen */
+  z-index: 1; /* Asegura que esta imagen esté en el fondo */
+  width: 35%;
+  height: 35%;
+}
   
-  .icon-size {
-    position: absolute; /* Posiciona el icono pequeño sobre la imagen grande */
-    top: 50%; /* Posiciona el icono pequeño en el medio verticalmente */
-    left: 50%; /* Posiciona el icono pequeño en el medio horizontalmente */
-    transform: translate(45%, -145%); /* Ajusta la posición para centrar el icono pequeño */
-    z-index: 2; /* Asegura que esta imagen esté encima de la imagen grande */
-    width: 70px; /* Ajusta el tamaño del icono, cámbialo según sea necesario */
-    height: auto; /* Mantiene la proporción del icono */
-  }
 
   /* titulos */
 .tittle {
@@ -61,22 +53,55 @@ a{
   font-size: 1.6em;
   font-family: 'Franklin Gothic Medium';
 }
+.text-mini{
+  display: flex;
+  justify-content: start; /* Centra el contenido horizontalmente */
+  align-items: start; /* Centra el contenido verticalmente */
+  color: #413f3f;
+  font-size: 1.0em;
+  font-family: 'Franklin Gothic Medium';
+}
 
 .container_center-padding_up {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 10px 0px 0px 10px; /* | arriba || derecha || abajo || izquierda | */
+  padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+}
+.style-btn-white{
+  --background: #ffffff;
+  width: 55%;
+  font-size: 1.2em;
+  --border-radius: 20px; /* modificar los bordes */
 }
 
-.style-btn{
-  --background: #ffffff;
-  width: 90%;
+.style-btn-red{
+  --background: #f13d3d;
+  width: 55%;
   font-size: 1.2em;
-  --border-radius: 15px; /* modificar los bordes */
+  --border-radius: 20px; /* modificar los bordes */
 }
-.text-center{
+
+.text-center-black{
   text-align: center;
   color: rgb(3, 3, 3);
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+.text-center-white{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.style-input{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: white; /* Cambiar el color de fondo */
+  color: #333333;
+  font-family: sans-serif;
+}
+
+
+.container-input {
+  padding: 5px 20px 5px 20px; /* | arriba || derecha || abajo || izquierda | */
+}
+

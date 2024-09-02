@@ -1,15 +1,13 @@
 <ion-content [fullscreen]="true">
 
-  <a routerLink="/home" class="container-start">
+  <a routerLink="/tabs/home" class="container-start">
     <ion-text class="text">< atras </ion-text>
   </a>
 
   <div class="container-center">
-    <img src="assets/isotipos/logo perfil.png" alt="logo" class="icon-size-big" />
-    <a routerLink="/home" >
-      <img src="assets/icon/icon +.png" alt="logo" class="icon-size" />
-    </a>
+    <img src="assets/isotipos/logo perfil.png" alt="logo" class="icon-size" />
   </div>
+  
 
   <div class="container_center-padding_up">
     <ion-text class="tittle">Nombre usuario</ion-text>
@@ -20,7 +18,30 @@
   </div>
   
   <div class="container_center-padding_up">
-    <ion-button class="style-btn" fill="outline"><ion-text class="text-center">editar perfil</ion-text></ion-button>
+    <ion-button class="style-btn-white" fill="outline"><ion-text class="text-center-black">editar perfil</ion-text></ion-button>
+  </div>
+
+  <div class="container-input">
+    <ion-text class="text-mini">Nombre completo</ion-text>
+    <ion-input class="style-input" fill="outline" type="text" disabled></ion-input>
+  </div>
+  <div class="container-input">
+    <ion-text class="text-mini">Usuario</ion-text>
+    <ion-input class="style-input" fill="outline" type="user" disabled></ion-input>
+  </div>
+  <div class="container-input">
+    <ion-text class="text-mini">Correo electrónico</ion-text>
+    <ion-input class="style-input" fill="outline" type="email" disabled></ion-input>
+  </div>
+  <div class="container-input">
+    <ion-text class="text-mini">Número de teléfono</ion-text>
+    <ion-input class="style-input" fill="outline" type="tel" disabled></ion-input>
+  </div> 
+
+
+  <div class="container_center-padding_up">
+    <ion-button routerLink="/login" class="style-btn-red"><ion-text class="text-center-white">Cerrar sesión </ion-text></ion-button>
   </div>
 
 </ion-content>
+

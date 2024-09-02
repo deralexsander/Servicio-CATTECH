@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'tabs/home',
     pathMatch: 'full'
   },
   {
@@ -22,10 +22,28 @@ const routes: Routes = [
   {
     path: 'pruenas',
     loadChildren: () => import('./pages/pruenas/pruenas.module').then( m => m.PruenasPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'puntos',
+    loadChildren: () => import('./pages/puntos/puntos.module').then( m => m.PuntosPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },  {
+    path: 'historial',
+    loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
+  },
+  {
+    path: 'dispositivos',
+    loadChildren: () => import('./pages/dispositivos/dispositivos.module').then( m => m.DispositivosPageModule)
+  },
+
+
 
 ];
 

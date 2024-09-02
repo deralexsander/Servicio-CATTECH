@@ -19,7 +19,7 @@ a{
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  padding: 12px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+  padding: 20px 25px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
 }
 
 /* container botones */
@@ -42,7 +42,7 @@ a{
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding: 0px 0px 20px 20px; /* | arriba || derecha || abajo || izquierda | */
+  padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
 }
 
 /* container textos */
@@ -74,8 +74,8 @@ a{
 
 /* tamaño tarjetas */
 .card-size{
-  width: 150px; /* Estirar a los lados */
-  height: 120px; /* Estirar para abajo */
+  width: 160px; /* Estirar a los lados */
+  height: 125px; /* Estirar para abajo */
   border-radius: 15px; /* modificar los bordes */
 
 }
@@ -109,25 +109,5 @@ ion-text {
   height: 30%;
 }
 
-.icon-size-segment {
-  width: 70%;
-  height: 70%;
-}
 
-ion-segment {
-  background-color: rgba(255, 255, 255, 0.3); /* Fondo blanco semitransparente */
-  backdrop-filter: blur(10px); /* Ajusta la cantidad de desenfoque */
-  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
-  border-radius: 12px; /* Si deseas bordes redondeados */
-  padding: 5px; /* Espacio interior opcional */
-}
 
-/* Estilo para los iconos que no están seleccionados */
-ion-segment-button:not(.segment-button-checked) .icon-size-segment {
-  color: #1d1d1d;
-}
-
-/* Estilo para el icono seleccionado */
-ion-segment-button.segment-button-checked .icon-size-segment {
-  color: #1654ff; /* El color celeste o el que desees para el icono seleccionado */
-}
