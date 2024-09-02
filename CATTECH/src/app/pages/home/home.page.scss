@@ -1,109 +1,133 @@
+/* fondo */
 ion-content {
-    --background:#c4dee7;
+  --background:#c4dee7;
 }
 
-.logo {
-    width: 12%;
-    height: 12%;
-}
-
-.container-end {
-    display: flex;
-    align-items: end;
-    flex-direction: column;
-    width: 100%;            
-    padding-inline: 20px;
-    padding-block: 20px; 
-}
-
-.title-left{
-    color: #413f3f;
-    padding-inline: 20px;
-    padding-block: 0px; 
-    font-size: 2.5em;
-    font-family: 'Franklin Gothic Medium';
-}
-.title-2-left{
-    padding-inline: 20px;
-    margin-top: 20px; 
-    font-size: 1.7em;
-    font-family: 'Franklin Gothic Medium';
-    text-decoration: none;
-}
-
-.text-left{
-  color: #413f3f;
+/* sacar el subrrayado */
+a{
   text-decoration: none;
- }
-
-
-.title-3-left{
-    color: #413f3f;
-    padding-inline: 20px;
-    margin-top: 10px; 
-    font-size: 1.5em;
-    font-family: 'Franklin Gothic Medium';
 }
 
-.carrucel-wrapper {
-    overflow: hidden; /* Oculta la barra de desplazamiento del contenedor principal */
-  }
-  
-  .carrucel {
-    display: flex;
-    overflow-x: scroll; /* Permite el desplazamiento horizontal */
-    scroll-behavior: smooth; /* Opcional: suaviza el desplazamiento */
-    gap: 2px; /* Espacio entre las tarjetas, ajusta según sea necesario */
-    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
-    scrollbar-width: none;  /* Para Firefox */
-    padding-block: 15px; 
-  }
-  
-  /* Oculta la barra de desplazamiento en navegadores basados en WebKit */
-  .carrucel::-webkit-scrollbar {
-    display: none;
-  }
-  
-  ion-card {
-    flex: 0 0 auto; /* Evita que las tarjetas se estiren y les permite mantener su tamaño */
-    color: white;
-    text-align: center; /* Centra el texto horizontalmente */
-    font-family: 'Franklin Gothic Medium';
-  }
-  
-.container-center-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-.btn-1 {
-  font-size: 1.2em;
-  font-family: 'Franklin Gothic Medium';
-  width: 90%;
-  color: white;
-  --background: #283df7;
-  margin-top: 10px;
-  text-align: left;
-  --border-radius: 15px;
-}
-
-.btn-content {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.icon {
+/* tamaño logo */
+.logo-size {
   width: 12%;
   height: 12%;
-  margin-right: 10px;
 }
-.icon-grande {
+
+/* container logo */
+.container-end {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 12px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+/* container botones */
+.container-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+.container-start {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 5px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+/* container textos */
+.container_start-padding_down {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0px 0px 20px 20px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+/* container textos */
+.container_start-padding_up {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px 0px 0px 20px; /* | arriba || derecha || abajo || izquierda | */
+}
+/* titulos */
+.tittle {
+  color: #413f3f;
+  font-size: 2.5em;
+  font-family: 'Franklin Gothic Medium';
+}
+
+/* titulos-mas pequeños */
+.text{
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
+}
+/* texto centrado blanco */
+.text-center-white{
+  text-align: center;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* tamaño tarjetas */
+.card-size{
+  width: 150px; /* Estirar a los lados */
+  height: 120px; /* Estirar para abajo */
+  border-radius: 15px; /* modificar los bordes */
+
+}
+
+/* carrucel tarjetas */
+.carrucel {
+  display: flex;
+  overflow-x: scroll; /* Permite el desplazamiento horizontal */
+  gap: 2px; /* Espacio entre las tarjetas*/
+  scrollbar-width: none; /* esconde el scrollbar */
+}
+
+.style-btn{
+  --background: #283df7;
+  width: 90%;
+  font-size: 1.2em;
+  --border-radius: 15px; /* modificar los bordes */
+}
+
+ion-text {
+  flex: 1; /* Hace que el texto ocupe el espacio restante */
+}
+
+.icon-size-small{
+  width: 12%;
+  height: 12%;
+}
+
+.icon-size-big{
   width: 30%;
   height: 30%;
-  margin-right: 10px;
+}
+
+.icon-size-segment {
+  width: 70%;
+  height: 70%;
+}
+
+ion-segment {
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo blanco semitransparente */
+  backdrop-filter: blur(10px); /* Ajusta la cantidad de desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  border-radius: 12px; /* Si deseas bordes redondeados */
+  padding: 5px; /* Espacio interior opcional */
+}
+
+/* Estilo para los iconos que no están seleccionados */
+ion-segment-button:not(.segment-button-checked) .icon-size-segment {
+  color: #1d1d1d;
+}
+
+/* Estilo para el icono seleccionado */
+ion-segment-button.segment-button-checked .icon-size-segment {
+  color: #1654ff; /* El color celeste o el que desees para el icono seleccionado */
 }

@@ -1,105 +1,117 @@
 <ion-content [fullscreen]="true">
+
+
   <div class="container-end">
-    <img src="assets/isotipos/logo perfil.png" alt="Logo" class="logo" />
+    <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
   </div>
-  <div class="title-left">
-    <ion-text>Soporte técnico</ion-text>
-  </div>
-  <div class="title-2-left">
-    <a class="text-left" routerLink="/pruenas"><ion-text>Mis resumenes</ion-text></a>
+  
+
+  <div class="container_start-padding_down">
+    <ion-text class="tittle">Soporte técnico</ion-text>
   </div>
 
-  <div class="carrucel-wrapper">
+  <div class="container_start-padding_down">
+      <ion-text routerLink="/perfil" class="text">Mis resumenes</ion-text>
+  </div>
+
+
     <div class="carrucel">
-      <ion-card color="success">
+
+      <a routerLink="/pruenas">
+        <ion-card color="success" class="text-center-white card-size">
         <ion-card-header>
           <ion-card-title>Mantención</ion-card-title>
           <ion-card-subtitle>00/00/0000</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>Listo </ion-card-content>
-      </ion-card>
+      </ion-card></a>
+
   
-      <ion-card color="warning">
-        <ion-card-header>
-          <ion-card-title>Mantención</ion-card-title>
-          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>Diagnostico</ion-card-content>
-      </ion-card>
-  
-      <ion-card color="danger">
+      <a routerLink="/pruenas">
+        <ion-card color="success" class="text-center-white card-size">
         <ion-card-header>
           <ion-card-title>Reparación</ion-card-title>
           <ion-card-subtitle>00/00/0000</ion-card-subtitle>
         </ion-card-header>
-        <ion-card-content>Trabajando </ion-card-content>
-      </ion-card>
+        <ion-card-content>Listo </ion-card-content>
+      </ion-card></a>
+  
+      <a routerLink="/pruenas">
+        <ion-card color="success" class="text-center-white card-size">
+        <ion-card-header>
+          <ion-card-title>Revición</ion-card-title>
+          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>Listo </ion-card-content>
+      </ion-card></a>
 
-      <ion-card color="primary">
+      <a routerLink="/pruenas">
+        <ion-card color="success" class="text-center-white card-size">
         <ion-card-header>
           <ion-card-title>Mantención</ion-card-title>
           <ion-card-subtitle>00/00/0000</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>Listo </ion-card-content>
-      </ion-card>
+      </ion-card></a>
 
-      <ion-card color="primary">
+      <a routerLink="/pruenas">
+        <ion-card color="success" class="text-center-white card-size">
         <ion-card-header>
           <ion-card-title>Mantención</ion-card-title>
           <ion-card-subtitle>00/00/0000</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>Listo </ion-card-content>
-      </ion-card>
+      </ion-card></a>
     </div>
-  </div>
 
-  <div class="title-3-left">
-    <ion-text >Herramientas de soporte</ion-text>
-  </div>
-  
-  <div class="container-center-btn">
-    <ion-button class="btn-1">
-      <div class="btn-content">
-        <img src="assets/icon/agendar.png" alt="icon" class="icon" />
-        <span>Agendar visita</span>
-      </div>
-    </ion-button>
-  </div>
-  <div class="container-center-btn">
-    <ion-button class="btn-1">
-      <div class="btn-content">
-        <img src="assets/icon/mantencion.png" alt="icon" class="icon" />
-        <span>Mantención</span>
-      </div>
-    </ion-button>
-  </div>
-  <div class="container-center-btn">
-    <ion-button class="btn-1">
-      <div class="btn-content">
-        <img src="assets/icon/cobertura.png" alt="icon" class="icon" />
-        <span>Cobertura</span>
-      </div>
-    </ion-button>
-  </div>
-  <div class="container-center-btn">
-    <ion-button class="btn-1">
-      <div class="btn-content">
-        <img src="assets/icon/reciclar.png" alt="icon" class="icon" />
-        <span>Reciclar aparato</span>
-      </div>
-    </ion-button>
-  </div>
-  
-  <div class="title-3-left">
-    <ion-text >Ayuda</ion-text>
-  </div>
-  <div class="container-center-btn">
-    <ion-button class="btn-1">
-      <div class="btn-content">
-        <img src="assets/icon/ayuda.png" alt="icon" class="icon-grande" />
-        <span>Contáctate con nosotros</span>
-      </div>
-    </ion-button>
-  </div>
+    <div class="container_start-padding_up">
+      <ion-text class="text">Herramientas de soporte</ion-text>
+    </div>
 
+    <div class="container-center">
+      <ion-button routerLink="/pruenas" class="style-btn">
+        <img src="assets/icon/agendar.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">Agendar visita</ion-text>
+      </ion-button>
+
+      <ion-button routerLink="/pruenas" class="style-btn">
+        <img src="assets/icon/mantencion.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">Mantención</ion-text>
+      </ion-button>
+
+      <ion-button routerLink="/pruenas" class="style-btn">
+        <img src="assets/icon/cobertura.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">Cobertura</ion-text>
+      </ion-button>
+
+      <ion-button routerLink="/pruenas" class="style-btn">
+        <img src="assets/icon/reciclar.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">Reciclar aparato</ion-text>
+      </ion-button>
+    </div>
+    
+    <div class="container_start-padding_up">
+      <ion-text class="text">Ayuda</ion-text>
+    </div>
+
+    <a routerLink="/pruenas" class="container-center">
+      <ion-button class="style-btn">
+        <img src="assets/icon/ayuda.png" alt="icon" class="icon-size-big" />
+        <ion-text class="text-center-white">Contáctate con nosotros</ion-text>
+      </ion-button>
+    </a>
 </ion-content>
+
+<ion-footer>
+  <ion-segment value="default">
+    <ion-segment-button routerLink="/home" value="default" class="segment-button-checked">
+      <ion-icon class="icon-size-segment" name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button  routerLink="/pruenas" value="segment2">
+      <ion-icon class="icon-size-segment" name="pin"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button  routerLink="/pruenas" value="segment3">
+      <ion-icon class="icon-size-segment" name="receipt-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>
