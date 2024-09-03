@@ -42,6 +42,22 @@ const routes: Routes = [
     path: 'dispositivos',
     loadChildren: () => import('./pages/dispositivos/dispositivos.module').then( m => m.DispositivosPageModule)
   },
+  {
+    path: 'visitas',
+    loadChildren: () => import('./pages/visitas/visitas.module').then( m => m.VisitasPageModule)
+  },
+  {
+    path: 'cobertura',
+    loadChildren: () => import('./pages/cobertura/cobertura.module').then( m => m.CoberturaPageModule)
+  },
+  {
+    path: 'reciclar',
+    loadChildren: () => import('./pages/reciclar/reciclar.module').then( m => m.ReciclarPageModule)
+  },
+  {
+    path: 'contacto',
+    loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
+  },
 
 
 
