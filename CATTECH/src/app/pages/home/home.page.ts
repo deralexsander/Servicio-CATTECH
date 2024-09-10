@@ -1,4 +1,7 @@
+// src/app/pages/home/home.page.ts
 import { Component, OnInit } from '@angular/core';
+import { CardService, Card } from '../../card.service'; 
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  cards: Card[] = [];
+  maxCards = 4;
+
+  constructor(private cardService: CardService) { }
 
   ngOnInit() {
+    this.cards = this.cardService.getCards();
   }
-
 }

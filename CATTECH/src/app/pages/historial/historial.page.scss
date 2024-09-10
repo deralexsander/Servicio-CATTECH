@@ -2,6 +2,9 @@
 ion-content {
     --background:#c4dee7;
 }
+.no-scroll {
+    --overflow: hidden;
+  }
 
 /* sacar el subrrayado */
 a{

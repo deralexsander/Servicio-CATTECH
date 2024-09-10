@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CardService, Card } from '../../card.service';
 
 @Component({
   selector: 'app-historial',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialPage implements OnInit {
 
-  constructor() { }
+  cards: Card[] = [];
+
+  constructor(private cardService: CardService) { }
 
   ngOnInit() {
+    this.cards = this.cardService.getCards();
   }
-
 }

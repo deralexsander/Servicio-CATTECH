@@ -1,19 +1,28 @@
 <ion-content [fullscreen]="true">
-  <div class="container-center">
+  <div class="container-center" #logo>
     <img src="assets/isotipos/logo.png" alt="Logo" class="logo" />
-    <ion-text class="login-title">Inicio sesión</ion-text>
   </div>
-  <div class="container-input">
+
+  <div class="container_center-padding_down" #texto>
+    <ion-text  class="login-title">Inicio sesión</ion-text>
+  </div>
+
+  <div class="container-input" >
     <ion-text>Correo electrónico</ion-text>
-    <ion-input fill="outline" type="email"></ion-input>
+    <ion-input fill="outline" type="email" [(ngModel)]="login.email" required></ion-input>
   </div>
   <div class="container-input">
     <ion-text>Contraseña</ion-text>
-    <ion-input fill="outline" type="password" value="password"></ion-input>
-  </div> 
-    <a class="text-left" routerLink="/tabs/home">¿Olvidaste tu contraseña?</a>
+    <ion-input [type]="passwordType" fill="outline" [(ngModel)]="login.password" required></ion-input>
+    <ion-icon
+      name="{{ showPassword ? 'eye-off' : 'eye' }}"
+      slot="end"
+      (click)="togglePasswordVisibility()">
+    </ion-icon>
+  </div>
+  <a class="text-left" routerLink="/tabs/home">¿Olvidaste tu contraseña?</a>
   <div class="container-center-btn">
-    <ion-button shape="round" class="btn-1" routerLink="/tabs/home" >Iniciar</ion-button>
-    <ion-button shape="round" class="btn-1" routerLink="/registro" >Registrar</ion-button>
+    <ion-button shape="round" class="btn-1" (click)="iniciarSesion()">Iniciar</ion-button>
+    <ion-button shape="round" class="btn-1" routerLink="/registro">Registrar</ion-button>
   </div>
 </ion-content>

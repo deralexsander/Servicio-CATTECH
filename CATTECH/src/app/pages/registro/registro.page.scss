@@ -2,13 +2,26 @@ ion-content {
     --background: linear-gradient(to bottom,#c4dee7,#c4dee7,#c4dee7,#c4dee7,#c4dee7, #3434eb);
 }
 
+ /* sacar el subrrayado */
+a{
+    text-decoration: none;
+}
+
 .container-center {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;            
-    margin-top: 0px; 
+    padding: 0px 0px 0px 0px; /* | arriba || derecha || abajo || izquierda | */ 
+}
+
+.container-start {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    display: inline-block;
+    padding: 20px 0px 0px 10px; /* | arriba || derecha || abajo || izquierda | */
 }
 
 .container-input {
@@ -26,7 +39,6 @@ ion-input{
     --border-radius: 15px !important; /* Redondear las esquinas */
     --background: white; /* Cambiar el color de fondo */
     --box-shadow: none; /* Quitar sombra si es necesario */
-    padding: 10px; /* Asegurar que el contenido no toque las esquinas redondeadas */
 }
 
 .logo {
@@ -59,5 +71,11 @@ ion-input{
     --background: #23C3FA;
 }
 
-
+/* titulos-mas pequeños */
+.text{
+    color: #413f3f;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium';
+}
   

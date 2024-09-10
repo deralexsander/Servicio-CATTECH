@@ -2,6 +2,7 @@ ion-content {
     --background: linear-gradient(to bottom,#c4dee7,#c4dee7,#c4dee7,#c4dee7,#c4dee7, #3434eb);
 }
 
+
 .container-center {
     display: flex;
     align-items: center;
@@ -17,8 +18,7 @@ ion-content {
     justify-content: left;
     flex-direction: column;
     color: #333333;
-    padding-inline: 20px;
-    padding-block: 10px; 
+    padding: 5px 10px 5px 10px; /* | arriba || derecha || abajo || izquierda | */
     font-family: sans-serif;
 }
 
@@ -69,4 +69,10 @@ ion-input{
 }
 
 
-  
+/* container textos */
+.container_center-padding_down {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 0px 10px 0px; /* | arriba || derecha || abajo || izquierda | */
+  }
