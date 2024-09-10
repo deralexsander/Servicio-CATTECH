@@ -88,6 +88,60 @@ a{
   scrollbar-width: none; /* esconde el scrollbar */
 }
 
+
+/* texto centrado blanco */
+.text-center-white {
+  text-align: center;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* tamaño tarjetas */
+.card-size {
+  width: 160px; /* Estirar a los lados */
+  height: 125px; /* Estirar para abajo */
+  border-radius: 15px; /* modificar los bordes */
+}
+
+/* carrucel tarjetas */
+.carrucel {
+  display: flex;
+  overflow-x: scroll; /* Permite el desplazamiento horizontal */
+  gap: 2px; /* Espacio entre las tarjetas*/
+  scrollbar-width: none; /* Esconde el scrollbar */
+}
+
+/* Animación para las tarjetas */
+.carrucel a {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInRight 0.6s ease-in-out forwards;
+}
+
+.carrucel a:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.carrucel a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.carrucel a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.carrucel a:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 .style-btn{
   --background: #283df7;
   width: 90%;

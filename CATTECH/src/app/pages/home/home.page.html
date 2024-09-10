@@ -15,54 +15,29 @@
   </div>
 
 
-    <div class="carrucel">
-
-      <a routerLink="/tabs/historial">
-        <ion-card color="success" class="text-center-white card-size">
+<div class="carrucel">
+  <ng-container *ngFor="let card of cards; let i = index">
+    <a *ngIf="i < maxCards" routerLink="/tabs/historial">
+      <ion-card [color]="card.color" class="text-center-white card-size">
         <ion-card-header>
-          <ion-card-title>Mantención</ion-card-title>
-          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
+          <ion-card-title>{{ card.title }}</ion-card-title>
+          <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
         </ion-card-header>
-        <ion-card-content>Listo </ion-card-content>
-      </ion-card></a>
+        <ion-card-content>{{ card.content }}</ion-card-content>
+      </ion-card>
+    </a>
+  </ng-container>
+
+  <a *ngIf="cards.length > maxCards" routerLink="/tabs/historial">
+    <ion-card color="success" class="text-center-white card-size">
+      <ion-card-header>
+        <ion-card-title>Ver más</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </a>
+</div>
 
   
-      <a routerLink="/tabs/historial">
-        <ion-card color="success" class="text-center-white card-size">
-        <ion-card-header>
-          <ion-card-title>Reparación</ion-card-title>
-          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>Listo </ion-card-content>
-      </ion-card></a>
-  
-      <a routerLink="/tabs/historial">
-        <ion-card color="success" class="text-center-white card-size">
-        <ion-card-header>
-          <ion-card-title>Revición</ion-card-title>
-          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>Listo </ion-card-content>
-      </ion-card></a>
-
-      <a routerLink="/tabs/historial">
-        <ion-card color="success" class="text-center-white card-size">
-        <ion-card-header>
-          <ion-card-title>Mantención</ion-card-title>
-          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>Listo </ion-card-content>
-      </ion-card></a>
-
-      <a routerLink="/tabs/historial">
-        <ion-card color="success" class="text-center-white card-size">
-        <ion-card-header>
-          <ion-card-title>Mantención</ion-card-title>
-          <ion-card-subtitle>00/00/0000</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>Listo </ion-card-content>
-      </ion-card></a>
-    </div>
 
     <div class="container_start-padding_up">
       <ion-text class="text">Herramientas de soporte</ion-text>
@@ -95,4 +70,6 @@
         <ion-text class="text-center-white">Contáctate con nosotros</ion-text>
       </ion-button>
     </a>
+
+
 </ion-content>
