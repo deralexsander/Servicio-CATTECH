@@ -1,0 +1,107 @@
+/* fondo */
+ion-content {
+    --background:#c4dee7;
+}
+  
+
+  /* sacar el subrrayado */
+a{
+    text-decoration: none;
+}
+
+.container-start {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  display: inline-block;
+  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+/* titulos-mas pequeños */
+.text{
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
+}
+
+
+  /* container img */
+.container-center {
+  position: relative; /* Permite el uso de posicionamiento absoluto para las imágenes */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  padding: 20px 12px 0px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
+  
+.icon-size {
+  position: relative; /* Para que el icono pequeño se posicione en relación a esta imagen */
+  z-index: 1; /* Asegura que esta imagen esté en el fondo */
+  width: 35%;
+  height: 35%;
+}
+  
+
+  /* titulos */
+.tittle {
+  color: #413f3f;
+  font-size: 2.5em;
+  font-family: 'Franklin Gothic Medium';
+}
+.text{
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
+}
+.text-mini{
+  display: flex;
+  justify-content: start; /* Centra el contenido horizontalmente */
+  align-items: start; /* Centra el contenido verticalmente */
+  color: #413f3f;
+  font-size: 1.0em;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.container_center-padding_up {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+}
+.style-btn-white{
+  --background: #ffffff;
+  width: 55%;
+  font-size: 1.2em;
+  --border-radius: 20px; /* modificar los bordes */
+}
+
+.style-btn-red{
+  --background: #f13d3d;
+  width: 55%;
+  font-size: 1.2em;
+  --border-radius: 20px; /* modificar los bordes */
+}
+
+.text-center-black{
+  text-align: center;
+  color: rgb(3, 3, 3);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.text-center-white{
+  text-align: center;
+  color: rgb(29, 26, 26);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.style-input{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: white; /* Cambiar el color de fondo */
+  color: #333333;
+  font-family: sans-serif;
+}
+
+
+.container-input {
+  padding: 5px 20px 5px 20px; /* | arriba || derecha || abajo || izquierda | */
+}
+

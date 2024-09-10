@@ -58,6 +58,18 @@ const routes: Routes = [
     path: 'contacto',
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
   },
+  {
+    path: 'perfiltrabajador',
+    loadChildren: () => import('./pages/perfiltrabajador/perfiltrabajador.module').then( m => m.PerfiltrabajadorPageModule)
+  },
+  {
+    path: 'actualizardisponibilidad',
+    loadChildren: () => import('./pages/actualizardisponibilidad/actualizardisponibilidad.module').then( m => m.ActualizardisponibilidadPageModule)
+  },
+  {
+    path: 'verclientes',
+    loadChildren: () => import('./pages/verclientes/verclientes.module').then( m => m.VerclientesPageModule)
+  },
 
 
 

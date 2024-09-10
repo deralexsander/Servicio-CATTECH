@@ -1,0 +1,38 @@
+
+
+<ion-content>
+  <a routerLink="/tabs/perfiltrabajador" class="container-start">
+    <ion-text class="text">< atras </ion-text>
+  </a>
+
+  <div class="container-end">
+    <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
+  </div>
+  
+  <div class="container_start-padding_down container-center">
+    <ion-text class="tittle">Clientes</ion-text>
+  </div>
+
+
+  <div class="container-start container-center">
+    <!-- Campo de búsqueda -->
+    <ion-searchbar placeholder="Buscar cliente..."  class="style-input"></ion-searchbar>
+
+    <!-- Lista de clientes -->
+    <ion-list class="container-center">
+      <ion-item *ngFor="">
+        <ion-label>
+          <!-- 
+          <h2>{{ cliente.nombre }}</h2>
+          <p>{{ cliente.email }}</p>
+          -->
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- Botón para ver historial del cliente -->
+    <div class="container-center">
+      <ion-button expand="block" class="style-btn">Ver Detalle</ion-button>
+    </div>
+  </div>
+</ion-content>
