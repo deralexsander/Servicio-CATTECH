@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CardService, Device } from '../../card.service'; 
 
 @Component({
   selector: 'app-cobertura',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cobertura.page.scss'],
 })
 export class CoberturaPage implements OnInit {
+  devices: Device[] = [];
 
-  constructor() { }
+  constructor(private cardService: CardService) {}
 
   ngOnInit() {
+    this.devices = this.cardService.getDevices(); // Obtén la lista de dispositivos del servicio
   }
-
 }

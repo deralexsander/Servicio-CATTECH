@@ -24,15 +24,79 @@ font-size: 1.6em;
 font-family: 'Franklin Gothic Medium';
 }
 
+/* titulos */
+.tittle {
+  color: #413f3f;
+  font-size: 2.5em;
+  font-family: 'Franklin Gothic Medium';
+}
 
 /* container img */
 .container-center {
-position: relative; /* Permite el uso de posicionamiento absoluto para las imágenes */
-display: flex;
-justify-content: center; /* Centra el contenido horizontalmente */
-align-items: center; /* Centra el contenido verticalmente */
-padding: 20px 12px 0px 12px; /* | arriba || derecha || abajo || izquierda | */
+  position: relative; /* Permite el uso de posicionamiento absoluto para las imágenes */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  padding: 0px 0px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
+
+  }
+
+
+.text-mini{
+  display: flex;
+  justify-content: start; /* Centra el contenido horizontalmente */
+  align-items: start; /* Centra el contenido verticalmente */
+  color: #413f3f;
+  font-size: 1.0em;
+  font-family: 'Franklin Gothic Medium';
 }
+
+.style-input-fecha{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: #ffffff; /* Cambiar el color de fondo */
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+.style-input-text{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: #ffffff; /* Cambiar el color de fondo */
+  color: #000000;
+  font-family: sans-serif;
+}
+.style-input{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: #ffffff; /* Cambiar el color de fondo */
+  color: #000000;
+  font-family: sans-serif;
+}
+
+.container-input {
+  padding: 5px 20px 5px 20px; /* | arriba || derecha || abajo || izquierda | */
+}
+.container_center-padding_up {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+.style-btn-white{
+  --background: #ffffff;
+  width: 55%;
+  font-size: 1.2em;
+  --border-radius: 20px; /* modificar los bordes */
+}
+
+
+
+
+
+
+
+
+
+
 
 .icon-size {
 position: relative; /* Para que el icono pequeño se posicione en relación a esta imagen */
@@ -42,12 +106,7 @@ height: 35%;
 }
 
 
-/* titulos */
-.tittle {
-color: #413f3f;
-font-size: 2.5em;
-font-family: 'Franklin Gothic Medium';
-}
+
 .text{
 color: #413f3f;
 font-size: 1.6em;
@@ -93,43 +152,7 @@ color: rgb(255, 255, 255);
 font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.style-input{
---border-radius: 15px !important; /* Redondear las esquinas */
---background: white; /* Cambiar el color de fondo */
-color: #333333;
-font-family: sans-serif;
-}
 
-
-.container-input {
-padding: 5px 20px 5px 20px; /* | arriba || derecha || abajo || izquierda | */
-}
-
-
-/* fondo */
-ion-content {
-    --background:#c4dee7;
-}
-  
-  /* sacar el subrrayado */
-a{
-    text-decoration: none;
-}
-
-.container-start {
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  display: inline-block;
-  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
-}
-
-/* titulos-mas pequeños */
-.text{
-  color: #000000;
-  font-size: 1.6em;
-  font-family: 'Franklin Gothic Medium';
-}
 /* container logo */
 .container-end {
   display: flex;
@@ -146,7 +169,7 @@ a{
 }
 
 ion-list {
-    background-color: #9dc5e0;
+    background-color: #c4dee7;
 }
         
 ion-item {

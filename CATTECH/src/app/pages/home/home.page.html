@@ -11,31 +11,32 @@
   </div>
 
   <div class="container_start-padding_down">
-      <ion-text routerLink="/tabs/historial" class="text">Mis resumenes ></ion-text>
+      <ion-text routerLink="/tabs/historial" class="text">Ultimos servicios ></ion-text>
   </div>
 
 
-<div class="carrucel">
-  <ng-container *ngFor="let card of cards; let i = index">
-    <a *ngIf="i < maxCards" routerLink="/tabs/historial">
-      <ion-card [color]="card.color" class="text-center-white card-size">
+  <div class="carrucel">
+    <ng-container *ngFor="let card of cards; let i = index">
+      <a *ngIf="i < maxCards" routerLink="/tabs/historial">
+        <ion-card [color]="card.color" class="text-center-white card-size">
+          <ion-card-header>
+            <ion-card-title>{{ card.title }}</ion-card-title>
+            <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>{{ card.content }}</ion-card-content>
+        </ion-card>
+      </a>
+    </ng-container>
+
+    <a *ngIf="cards.length > maxCards" routerLink="/tabs/historial">
+      <ion-card color="success" class="text-center-white card-size">
         <ion-card-header>
-          <ion-card-title>{{ card.title }}</ion-card-title>
-          <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
+          <ion-card-title>Ver más</ion-card-title>
         </ion-card-header>
-        <ion-card-content>{{ card.content }}</ion-card-content>
       </ion-card>
     </a>
-  </ng-container>
-
-  <a *ngIf="cards.length > maxCards" routerLink="/tabs/historial">
-    <ion-card color="success" class="text-center-white card-size">
-      <ion-card-header>
-        <ion-card-title>Ver más</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-  </a>
-</div>
+    
+  </div>
 
   
 

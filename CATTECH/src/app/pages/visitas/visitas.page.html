@@ -1,24 +1,19 @@
+<ion-content [fullscreen]="true">
 
+  <a routerLink="/tabs/home" class="container-start">
+    <ion-text class="text">< Listo </ion-text>
+  </a>
 
-<ion-content [fullscreen]="true" class="agendar-visita-content">
-    <div class="container-end">
-      <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
-    </div>
-    
-    <div class="container_start-padding_down">
-      <ion-text class="tittle">Agendar Visita</ion-text>
-    </div>
-  
-  
-    
-    <form [formGroup]="visitaForm" (ngSubmit)="onSubmit()">
-      <ion-list>
+  <div class="container_start-padding_down">
+    <ion-text class="tittle">Agendar Visita</ion-text>
+  </div>
 
+  <form [formGroup]="visitaForm" (ngSubmit)="onSubmit()">
+    <ion-list>
 
-        <div class="container-input">
-        <!-- Campo para seleccionar la fecha de la visita -->
-        <ion-item class="ion-margin-bottom" >
-          <ion-label position="stacked" class="ion-text-wrap">Fecha de la Visita</ion-label>
+      <div class="container-input">
+        <ion-text class="text-mini">Fecha de la Visita</ion-text>
+        <ion-item class="style-input-fecha" >
           <ion-datetime
             formControlName="fecha"
             displayFormat="DD/MM/YYYY"
@@ -30,59 +25,39 @@
         </ion-text>
       </div>
 
-
       <div class="container-input">
-        <!-- Campo para la dirección de la visita -->
-        <ion-item class="ion-margin-bottom">
-          <ion-label position="stacked">Dirección</ion-label>
-          <ion-textarea
-            formControlName="direccion"
-            placeholder="Introduce la dirección de la visita">
-          </ion-textarea>
-        </ion-item>
+        <ion-text class="text-mini">Direccion</ion-text>
+        <ion-textarea class="style-input-text" ></ion-textarea>
         <ion-text color="danger" *ngIf="direccion?.hasError('required') && direccion?.touched">
           La dirección es requerida.
         </ion-text>
       </div>
-        <div class="container-input">
 
-        <!-- Campo para motivo de la visita -->
-        <ion-item class="ion-margin-bottom">
-          <ion-label position="stacked">Motivo</ion-label>
-          <ion-textarea claas="style-input"
-            formControlName="motivo"
-            placeholder="Añadir motivo de la visita">
-          </ion-textarea>
-        </ion-item>
-        <ion-text color="danger" *ngIf="motivo?.hasError('required') && motivo?.touched">
+      <div class="container-input">
+        <ion-text class="text-mini">Motivo</ion-text>
+        <ion-textarea class="style-input-text" ></ion-textarea>
+        <ion-text color="danger" *ngIf="direccion?.hasError('required') && direccion?.touched">
           El motivo es requerido.
         </ion-text>
       </div>
 
-        <!-- Campo para adjuntar imágenes -->
-        <div class="container-input">
-        <ion-item class="ion-margin-bottom">
-          <ion-label position="stacked">Adjuntar Imágenes</ion-label>
-          <input
-            type="file"
-            accept="image/*"
-            (change)="onFileChange($event)"
-            multiple>
+      <div class="container-input">
+        <ion-text class="text-mini">Adjuntar Imágenes</ion-text>
+        <ion-item class="style-input-text">
+          <input type="file" accept="image/*" (change)="onFileChange($event)" multiple>
         </ion-item>
         <ion-text color="danger" *ngIf="(imagenes && imagenes.length > maxImages)">
           No puedes subir más de {{maxImages}} imágenes.
         </ion-text>
       </div>
-      </ion-list>
-  
-      <!-- Botón para agendar la visita -->
-      <ion-row>
-        <ion-col>
-          <ion-button expand="block" type="submit" [disabled]="visitaForm.invalid" class="style-btn">Agendar Visita</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </ion-content>
+      
+      <div class="container_center-padding_up">
+        <ion-button class="style-btn-white" expand="block" type="submit" [disabled]="visitaForm.invalid" fill="outline"><ion-text class="text-center-black">editar perfil</ion-text></ion-button>
+      </div>
+
+
+    </ion-list>
+  </form>
   
 
 
