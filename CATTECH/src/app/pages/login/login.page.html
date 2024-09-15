@@ -13,14 +13,9 @@
   </div>
   <div class="container-input">
     <ion-text>Contraseña</ion-text>
-    <ion-input [type]="passwordType" fill="outline" [(ngModel)]="login.password" required></ion-input>
-    <ion-icon
-      name="{{ showPassword ? 'eye-off' : 'eye' }}"
-      slot="end"
-      (click)="togglePasswordVisibility()">
-    </ion-icon>
+    <ion-input labelPlacement="floating" type="password" fill="outline" [(ngModel)]="login.password" required></ion-input>
   </div>
-  <a class="text-left" routerLink="/tabs/home">¿Olvidaste tu contraseña?</a>
+  <a class="text-left" routerLink="/recuperacion">¿Olvidaste tu contraseña?</a>
   <div class="container-center-btn">
     <ion-button shape="round" class="btn-1" (click)="iniciarSesion()">Iniciar</ion-button>
     <ion-button shape="round" class="btn-1" routerLink="/registro">Registrar</ion-button>

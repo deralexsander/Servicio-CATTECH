@@ -1,7 +1,6 @@
 <ion-content [fullscreen]="true">
-
   <a routerLink="/tabs/home" class="container-start">
-    <ion-text class="text">< Listo </ion-text>
+    <ion-text class="text">< Listo</ion-text>
   </a>
 
   <div class="container_start-padding_down">
@@ -9,20 +8,29 @@
   </div>
 
   <a class="container_start-padding_down">
-    <ion-text class="text">Consulta el estado de cobertura de tus dispositivos que fueron revisados. </ion-text>
+    <ion-text class="text">Consulta el estado de cobertura de tus dispositivos que fueron revisados.</ion-text>
   </a>
 
   <div class="container-input">
     <ion-text>ID de dispositivo</ion-text>
-    <ion-input fill="outline" fill="outline" type="text"></ion-input>
-  </div> 
-    <a class="text-left" routerLink="/tabs/home">¿Como busco el ID de mi dispositivo?</a>
+    <ion-input fill="outline" type="text"></ion-input>
+  </div>
+  <a class="text-left" routerLink="/tabs/home">¿Cómo busco el ID de mi dispositivo?</a>
 
   <div class="container_start-padding_up">
     <ion-text class="tittle">Tus dispositivos</ion-text>
   </div>
-  <div class="container_start-padding_up">
-    <ion-text class="text">aqui va a estar la tarjetas de todos los dispositivos</ion-text>
+
+  <div class="container-center2">
+    <ion-card class="style-card" *ngFor="let device of devices">
+      <div class="bajar-texto">
+        <ion-text class="text-card">{{ device.device }}</ion-text>
+        <ion-text class="text-card-1">{{ device.brand }} - {{ device.model }}</ion-text>
+        <ion-text class="text-card-2">Fecha: {{ device.date }}</ion-text>
+      </div>
+    </ion-card>
   </div>
 
+  
+  
 </ion-content>

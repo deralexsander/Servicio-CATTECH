@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+
+  <a routerLink="/login" class="container-start">
+    <ion-text class="text">< Atras </ion-text>
+  </a>
+
+  <div class="container_start-padding_down">
+    <ion-text class="tittle">Recuperar tu contraeña</ion-text>
+  </div>
+
+  <a class="container_start-padding_down">
+    <ion-text class="text">Aqui podras recuperar tu contraseña si la olvidaste. </ion-text>
+  </a>
+
+  <div class="container-input" >
+    <ion-text>Correo electrónico</ion-text>
+    <ion-input fill="outline" type="email" [(ngModel)]="verificar.email" required></ion-input>
+  </div>
+
+  <div class="container-center-btn">
+    <ion-button shape="round" class="btn-1" (click)="enviar()">Enviar</ion-button>
+  </div>
+
+</ion-content>

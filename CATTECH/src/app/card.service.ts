@@ -59,7 +59,6 @@ export class CardService {
     return this.cards;
   }
 
-  // Método para obtener los dispositivos
   getDevices(): Device[] {
     return this.devices;
   }

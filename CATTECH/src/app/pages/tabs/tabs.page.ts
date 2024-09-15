@@ -12,7 +12,4 @@ export class TabsPage implements OnInit {
 
   ngOnInit() {}
 
-  isHistorialSelected() {
-    return this.router.url.includes('/historial') || this.router.url.includes('/dispositivos');
-  }
 }

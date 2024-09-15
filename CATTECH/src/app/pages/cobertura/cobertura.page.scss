@@ -16,6 +16,58 @@ a{
   padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
 }
 
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px; /* Ajusta el padding según tus necesidades */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+  width: 100%; /* Asegura que el contenedor use el ancho completo del elemento padre */
+}
+
+ion-card {
+  width: 100%; /* Ajusta el ancho de la tarjeta según sea necesario */
+  max-width: 400px; /* Ajusta el ancho máximo de la tarjeta */
+  margin-bottom: 16px; /* Espacio entre tarjetas */
+}
+
+.container-center2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px 0px 20px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+.style-card{
+  background: #77c8e4;
+}
+
+.text-card{
+  color: #ffffff;
+  font-size: 1.0em;
+  font-family: sans-serif;
+  padding: 5px 10px 0px 10px; /* | arriba || derecha || abajo || izquierda | */
+}
+.text-card-1{
+  color: #838383;
+  font-size: 0.8em;
+  font-family: sans-serif;
+  padding: 0px 10px 0px 10px; /* | arriba || derecha || abajo || izquierda | */
+}
+.text-card-2{
+  color: #838383;
+  font-size: 0.8em;
+  font-family: sans-serif;
+  padding: 0px 10px 5px 10px; /* | arriba || derecha || abajo || izquierda | */
+}
+
+.bajar-texto {
+  display: flex;
+  flex-direction: column; /* Asegura que los textos se apilen verticalmente */
+  align-items: flex-start; /* Alinea los textos al inicio del contenedor */
+  padding: 0px 0px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
+}
+
 /* titulos-mas pequeños */
 .text{
   color: #413f3f;

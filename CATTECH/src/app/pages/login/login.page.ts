@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AlertController, AnimationController, Animation } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -11,8 +11,6 @@ export class LoginPage implements OnInit {
   @ViewChild('logo', { static: false }) logo!: ElementRef;
   @ViewChild('texto', { static: false }) texto!: ElementRef;
 
-  showPassword = false;
-  passwordType = 'password'; // Inicialmente será tipo password
 
   login: any = {
     email: "",
@@ -43,11 +41,6 @@ export class LoginPage implements OnInit {
 
     logoAnimation.play();
     textoAnimation.play();
-  }
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-    this.passwordType = this.showPassword ? 'text' : 'password'; // Cambia el tipo de input
   }
 
   async iniciarSesion() {
