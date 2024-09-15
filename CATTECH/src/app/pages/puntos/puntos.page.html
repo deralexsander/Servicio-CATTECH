@@ -1,11 +1,30 @@
-<ion-content [fullscreen]="true">
-
-    <div class="container-end">
-        <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
+<ion-content class="ion-padding">
+    <ion-text class="tittle">Puntos de Reciclaje</ion-text>
+    
+    <!-- Encabezado de localización -->
+    <div class="location-header">
+      
+      <ion-text class="text">Mostrando opciones cerca de Viña</ion-text>
     </div>
-
-    <div class="container_start-padding_down">
-        <ion-text class="tittle">Puntos de reparación</ion-text>
-      </div>
-</ion-content>
-
+  
+    
+  
+    <!-- Lista de proveedores -->
+    <div class="providers-list">
+      <ion-card *ngFor="let provider of providers">
+        <ion-card-header>
+          <ion-card-title>{{ provider.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ provider.distance }} km • {{ provider.address }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  
+    <!-- Mapa con bordes redondeados -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d45001.62342149893!2d-71.4471852544377!3d-33.0363034764206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spuntos%20de%20reciclaje%20v%20region%20chile!5e0!3m2!1ses!2scl!4v1726398314645!5m2!1ses!2scl" 
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </ion-content>
+  

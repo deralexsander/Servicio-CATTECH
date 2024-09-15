@@ -24,8 +24,14 @@ a{
 
 /* titulos */
 .tittle {
-  color: #413f3f;
-  font-size: 2.0em;
+  color: #363434;
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.text{
+  color: #201f1f;
+  font-size: 1.6em;
   font-family: 'Franklin Gothic Medium';
 }
 
@@ -35,4 +41,17 @@ a{
   align-items: flex-start;
   flex-direction: column;
   padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
+}
+.map-container {
+  display: flex;
+  justify-content: center; /* Para centrar horizontalmente */
+  align-items: center; /* Para centrar verticalmente si es necesario */
+  margin-top: 20px; /* Espacio superior */
+}
+
+.map-frame {
+  width: 90%; /* Ajusta el ancho del mapa al 90% del contenedor */
+  height: 400px; /* Puedes ajustar la altura como prefieras */
+  border-radius: 15px; /* Bordes redondeados */
+  border: 0; /* Quita el borde predeterminado del iframe */
 }
