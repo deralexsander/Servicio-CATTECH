@@ -1,0 +1,50 @@
+
+
+<ion-content class="ion-padding">
+  <!-- Sección de perfil de usuario -->
+  <ion-card>
+    <ion-card-header>
+      <div style="display: flex; align-items: center;">
+        <img src="assets/isotipos/logo.png" alt="avatar" style="border-radius: 50%; width: 80px; height: 80px; margin-right: 10px;">
+        <div>
+          <h2>Nicolas Muñoz</h2>
+          <p>Mr.Nico</p>
+        </div>
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Información del usuario -->
+  <ion-card>
+    <ion-card-content>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3>Nombre</h3>
+          <p>Nicolas Muñoz</p>
+        </div>
+        <ion-button fill="outline" (click)="openEditModal('name')">Editar</ion-button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3>Nombre de usuario</h3>
+          <p>Mr.Nico</p>
+        </div>
+        <ion-button fill="outline" (click)="openEditModal('username')">Editar</ion-button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3>Correo electrónico</h3>
+          <p>********* <a href="#">Mostrar</a></p>
+        </div>
+        <ion-button fill="outline" (click)="openEditModal('email')">Editar</ion-button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3>Número de teléfono</h3>
+          <p>********691 <a href="#">Mostrar</a></p>
+        </div>
+        <ion-button fill="outline" (click)="openEditModal('phone')">Editar</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

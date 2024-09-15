@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h2>Cambia tu {{ field }}</h2>
+      <p>Introduce un nuevo {{ field }} y tu contraseña existente.</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">{{ field }}</ion-label>
+        <ion-input [(ngModel)]="newFieldValue"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contraseña actual</ion-label>
+        <ion-input type="password" [(ngModel)]="currentPassword"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-footer>
+      <ion-button expand="block" (click)="saveChanges()">Listo</ion-button>
+      <ion-button expand="block" color="light" (click)="closeModal()">Cancelar</ion-button>
+    </ion-footer>
+  </ion-card>
+</ion-content>

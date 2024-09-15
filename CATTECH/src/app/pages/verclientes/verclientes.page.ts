@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./verclientes.page.scss'],
 })
 export class VerclientesPage implements OnInit {
+  clientes: any[] = [
+    { nombre: 'Cliente 1' },
+    { nombre: 'Cliente 2' },
+    { nombre: 'Cliente 3' }
+  ];
 
   constructor() { }
 
   ngOnInit() {
   }
-
+ 
+    
+  
 }

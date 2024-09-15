@@ -71,6 +71,11 @@ const routes: Routes = [
     path: 'verclientes',
     loadChildren: () => import('./pages/verclientes/verclientes.module').then( m => m.VerclientesPageModule)
   },
+  {
+    path: 'editarperfil',
+    loadChildren: () => import('./pages/editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
+  },
+
 
 
 
