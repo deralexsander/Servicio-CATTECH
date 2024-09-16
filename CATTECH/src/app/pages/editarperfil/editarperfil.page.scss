@@ -65,14 +65,14 @@ a{
 /* titulos */
 .tittle {
   color: #363434;
-  font-size: 2.5em;
+  font-size: 2em;
   font-family: 'Franklin Gothic Medium';
 }
 
 /* titulos-mas pequeños */
 .text{
   color: #201f1f;
-  font-size: 1.6em;
+  font-size: 1em;
   font-family: 'Franklin Gothic Medium';
 }
 /* texto centrado blanco */
@@ -131,7 +131,9 @@ a{
   font-size: 1.2em;
   --border-radius: 15px; /* modificar los bordes */
   color: rgba(255, 255, 255, 0.863);
+  height: 10%;
 }
+
 
 ion-text {
   flex: 1; /* Hace que el texto ocupe el espacio restante */

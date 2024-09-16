@@ -1,8 +1,11 @@
 <ion-content class="ion-padding">
+  <div class="container-end">
+    <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
+  </div>
     <ion-text class="tittle">Puntos de Reciclaje</ion-text>
     
     <!-- Encabezado de localización -->
-    <div class="location-header">
+    <div class="container">
       
       <ion-text class="text">Mostrando opciones cerca de Viña</ion-text>
     </div>
@@ -11,7 +14,7 @@
   
     <!-- Lista de proveedores -->
     <div class="providers-list">
-      <ion-card *ngFor="let provider of providers">
+      <ion-card *ngFor="let provider of providers" class="card-puntos">
         <ion-card-header>
           <ion-card-title>{{ provider.name }}</ion-card-title>
         </ion-card-header>

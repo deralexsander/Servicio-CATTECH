@@ -14,6 +14,15 @@ a{
   height: 12%;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
+  --background:#7ccee9;
+  color: rgb(22, 21, 21);
+}
 /* container logo */
 .container-end {
   display: flex;
@@ -24,14 +33,15 @@ a{
 
 /* titulos */
 .tittle {
-  color: #363434;
+  color: #1a1818;
   font-size: 2em;
   font-family: 'Franklin Gothic Medium';
 }
 
 .text{
+  margin-top: 5%;
   color: #201f1f;
-  font-size: 1.6em;
+  font-size: 1em;
   font-family: 'Franklin Gothic Medium';
 }
 
@@ -54,4 +64,18 @@ a{
   height: 400px; /* Puedes ajustar la altura como prefieras */
   border-radius: 15px; /* Bordes redondeados */
   border: 0; /* Quita el borde predeterminado del iframe */
+}
+.card-puntos {
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
+  border-radius: 15px;
+  background-color: #41b1d3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color :#1a1818
 }
