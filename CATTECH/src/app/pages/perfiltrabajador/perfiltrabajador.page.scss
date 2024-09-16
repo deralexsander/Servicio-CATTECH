@@ -80,14 +80,6 @@ a{
 
 }
 
-/* carrucel tarjetas */
-.carrucel {
-  display: flex;
-  overflow-x: scroll; /* Permite el desplazamiento horizontal */
-  gap: 2px; /* Espacio entre las tarjetas*/
-  scrollbar-width: none; /* esconde el scrollbar */
-}
-
 .style-btn{
   --background: #283df7;
   width: 90%;
@@ -98,6 +90,8 @@ a{
   
   
 }
+
+
 
 ion-text {
   flex: 1; /* Hace que el texto ocupe el espacio restante */

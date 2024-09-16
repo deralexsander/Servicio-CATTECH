@@ -1,0 +1,35 @@
+/* estilos para el modal */
+.custom-modal-css {
+    --width: 70%;
+    --height: 50%;
+    --border-radius: 10px;
+    --background: #7ccee9;
+    --border-radius: 10px;
+  }
+.container{
+    background: #7ccee9;
+}
+.text{
+    color: #201f1f;
+    font-size: 1.6em;
+    font-family: 'Franklin Gothic Medium';
+}
+.text-input{
+    color: #201f1f;
+    
+    font-family: 'Franklin Gothic Medium';
+}
+.style-btn{
+    --background: #0d1eb9;
+  
+    --border-radius: 15px; /* modificar los bordes */
+    color: rgba(255, 255, 255, 0.863);
+    
+  }
+
+.style-btn-red{
+    background: #c03714;
+}
+.content{
+    background: #7ccee9;
+}

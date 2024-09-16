@@ -1,49 +1,52 @@
 
 
 <ion-content class="ion-padding">
+  <a routerLink="/pages/editarperfil" class="container-start">
+    <ion-text class="text">< atras </ion-text>
+  </a>
   <!-- Sección de perfil de usuario -->
   <ion-card>
-    <ion-card-header>
+    <ion-card-header class="container">
       <div style="display: flex; align-items: center;">
         <img src="assets/isotipos/logo.png" alt="avatar" style="border-radius: 50%; width: 80px; height: 80px; margin-right: 10px;">
         <div>
-          <h2>Nicolas Muñoz</h2>
-          <p>Mr.Nico</p>
+          <h2 class="text">Nicolas Muñoz</h2>
+          <p class="text">Mr.Nico</p>
         </div>
       </div>
     </ion-card-header>
   </ion-card>
 
   <!-- Información del usuario -->
-  <ion-card>
-    <ion-card-content>
+  <ion-card class="containereditar">
+    <ion-card-content >
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <h3>Nombre</h3>
-          <p>Nicolas Muñoz</p>
+          <h3 >Nombre</h3>
+          <p class="text">Nicolas Muñoz</p>
         </div>
-        <ion-button fill="outline" (click)="openEditModal('Nombre')">Editar</ion-button>
+        <ion-button fill="outline" (click)="openEditModal('Nombre')" class="style-btn">Editar</ion-button>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <h3>Nombre de usuario</h3>
-          <p>Mr.Nico</p>
+          <p class="text">Mr.Nico</p>
         </div>
-        <ion-button fill="outline" (click)="openEditModal('Nombre de Usuario')">Editar</ion-button>
+        <ion-button fill="outline" (click)="openEditModal('Nombre de Usuario')" class="style-btn">Editar</ion-button>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <h3>Correo electrónico</h3>
-          <p>********* <a href="#">Mostrar</a></p>
+          <p class="text">MrNico&#64;gmail.com </p>
         </div>
-        <ion-button fill="outline" (click)="openEditModal('email')">Editar</ion-button>
+        <ion-button fill="outline" (click)="openEditModal('email')" class="style-btn">Editar</ion-button>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <h3>Número de teléfono</h3>
-          <p>********691 <a href="#">Mostrar</a></p>
+          <p class="text">+56999669966 </p>
         </div>
-        <ion-button fill="outline" (click)="openEditModal('telefono')">Editar</ion-button>
+        <ion-button fill="outline" (click)="openEditModal('telefono')" class="style-btn">Editar</ion-button>
       </div>
     </ion-card-content>
   </ion-card>

@@ -14,7 +14,8 @@ a{
   align-items: start;
   flex-direction: column;
   display: inline-block;
-  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+  padding: 10% 7% 10% 7%; /* | arriba || derecha || abajo || izquierda | */
+  justify-content: center; /* Centra el contenido horizontalmente */
 }
 
 /* titulos-mas pequeños */
