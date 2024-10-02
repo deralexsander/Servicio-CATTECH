@@ -1,20 +1,20 @@
-
-
 <ion-content class="ion-padding">
   <a routerLink="/pages/perfil" class="container-start">
     <ion-text class="text">< atras </ion-text>
   </a>
+  
   <div class="container-end">
     <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
   </div>
+  
   <!-- Sección de perfil de usuario -->
   <ion-card>
     <ion-card-header class="container">
       <div style="display: flex; align-items: center;">
-        <img src="assets/isotipos/logo.png" alt="avatar" style="border-radius: 50%; width: 80px; height: 80px; margin-right: 10px;">
+        <img [src]="user.photoURL || 'assets/isotipos/logo.png'" alt="avatar" style="border-radius: 50%; width: 80px; height: 80px; margin-right: 10px;">
         <div>
-          <h2 class="tittle">Nicolas Muñoz</h2>
-          <p class="tittle">Mr.Nico</p>
+          <h2 class="tittle">{{ user.displayName || 'Nombre de Usuario' }}</h2>
+          <p class="tittle">{{ user.username || 'Nombre de Usuario' }}</p>
         </div>
       </div>
     </ion-card-header>
@@ -22,32 +22,32 @@
 
   <!-- Información del usuario -->
   <ion-card class="containereditar">
-    <ion-card-content >
+    <ion-card-content>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <h3 >Nombre</h3>
-          <p class="text">Nicolas Muñoz</p>
+          <h3>Nombre</h3>
+          <p class="text">{{ user.displayName || 'Nicolas Muñoz' }}</p>
         </div>
         <ion-button fill="outline" (click)="openEditModal('Nombre')" class="style-btn">Editar</ion-button>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <h3>Nombre de usuario</h3>
-          <p class="text">Mr.Nico</p>
+          <p class="text">{{ user.username || 'Mr.Nico' }}</p>
         </div>
         <ion-button fill="outline" (click)="openEditModal('Nombre de Usuario')" class="style-btn">Editar</ion-button>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <h3>Correo electrónico</h3>
-          <p class="text">MrNico&#64;gmail.com </p>
+          <p class="text">{{ user.email || 'MrNico@gmail.com' }}</p>
         </div>
         <ion-button fill="outline" (click)="openEditModal('email')" class="style-btn">Editar</ion-button>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           <h3>Número de teléfono</h3>
-          <p class="text">+56999669966 </p>
+          <p class="text">{{ user.phone || '+56999669966' }}</p>
         </div>
         <ion-button fill="outline" (click)="openEditModal('telefono')" class="style-btn">Editar</ion-button>
       </div>
