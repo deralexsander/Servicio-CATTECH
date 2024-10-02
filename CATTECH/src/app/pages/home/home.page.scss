@@ -12,6 +12,9 @@ a{
 .logo-size {
   width: 12%;
   height: 12%;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+  overflow: hidden; /* Evita que partes de la imagen se desborden */
 }
 
 /* container logo */
@@ -159,9 +162,33 @@ ion-text {
 }
 
 .icon-size-big{
+
   width: 30%;
   height: 30%;
 }
 
 
+.dropdown-menu {
+  position: absolute; /* Permite que el menú se coloque relativo a su contenedor */
+  background-color: rgb(197, 46, 46); /* Color de fondo */
+  border: 1px solid #0a0dc5; /* Borde azul */
+  border-radius: 4px; /* Esquinas redondeadas */
+  padding: 10px; /* Espaciado interno */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+  z-index: 1000; /* Asegúrate de que esté en la parte superior */
+}
 
+.dropdown-menu button {
+  display: block; /* Cada botón ocupará todo el ancho */
+  width: 100%; /* Ancho del botón igual al del contenedor */
+  background: none; /* Sin fondo por defecto */
+  border: none; /* Sin borde */
+  padding: 8px; /* Espaciado interno del botón */
+  text-align: left; /* Texto alineado a la izquierda */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.dropdown-menu button:hover {
+  background-color: #ce2222; /* Cambia el fondo al pasar el ratón */
+  color: white; /* Cambia el color del texto al pasar el ratón (opcional) */
+}

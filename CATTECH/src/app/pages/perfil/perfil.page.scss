@@ -33,12 +33,14 @@ a{
   align-items: center; /* Centra el contenido verticalmente */
   padding: 20px 12px 0px 12px; /* | arriba || derecha || abajo || izquierda | */
 }
-  
-.icon-size {
-  position: relative; /* Para que el icono pequeño se posicione en relación a esta imagen */
-  z-index: 1; /* Asegura que esta imagen esté en el fondo */
+
+/* tamaño logo */
+.logo-size {
   width: 35%;
   height: 35%;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+  overflow: hidden; /* Evita que partes de la imagen se desborden */
 }
   
 
@@ -68,6 +70,17 @@ a{
   flex-direction: column;
   padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
 }
+
+.container_center-padding_up_correo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */ 
+  font-size: 85%;  
+}
+
+
+
 .style-btn-white{
   --background: #ffffff;
   width: 55%;

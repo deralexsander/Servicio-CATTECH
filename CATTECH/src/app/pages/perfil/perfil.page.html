@@ -5,27 +5,27 @@
   </a>
 
   <div class="container-center">
-    <img src="assets/isotipos/logo perfil.png" alt="logo" class="icon-size" />
-  </div>
-  
-
-  <div class="container_center-padding_up">
-    <ion-text class="tittle">Nombre usuario</ion-text>
-  </div>
-
-  <div class="container_center-padding_up">
-    <ion-text class="text">correo electronico</ion-text>
+    <img [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
   </div>
   
   <div class="container_center-padding_up">
-    <ion-button routerLink="/editarperfil" class="style-btn-white" fill="outline"><ion-text class="text-center-black">editar perfil</ion-text></ion-button>
+    <ion-text class="tittle">{{ user?.displayName || 'Nombre de usuario' }}</ion-text>
   </div>
 
+  <div class="container_center-padding_up_correo">
+    <ion-text class="text">{{ user?.email || 'correo electronico' }}</ion-text>
+  </div>
   
+  <div class="container_center-padding_up">
+    <ion-button (click)="redirectToGoogle()" class="style-btn-white" fill="outline">
+      <ion-text class="text-center-black">editar perfil</ion-text>
+    </ion-button>
+  </div>
 
   <div class="container_center-padding_up">
-    <ion-button routerLink="/login" class="style-btn-red"><ion-text class="text-center-white">Cerrar sesión </ion-text></ion-button>
+    <ion-button (click)="logout()" class="style-btn-red">
+      <ion-text class="text-center-white">Cerrar sesión</ion-text>
+    </ion-button>
   </div>
 
 </ion-content>
-
