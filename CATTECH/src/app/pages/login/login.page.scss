@@ -59,12 +59,30 @@ ion-input{
     margin-top: 35px; 
 }
 
+.container-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;            
+    margin-top: 5px; 
+}
+
 .btn-1{
     font-size: 1.2em;
     font-family: 'Franklin Gothic Medium';
     width: 60%;
     color: white;
     --background: #23C3FA;
+    margin-top: 10px;
+}
+
+.btn-2{
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium';
+    width: 30%;
+    color: white;
+    --background: #12a1d1;
     margin-top: 10px;
 }
 
