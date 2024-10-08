@@ -9,14 +9,17 @@ import { AppRoutingModule } from './app-routing.module';
 // Importa Firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent  // Asegúrate de que este componente esté aquí
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    // Inicializar Firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
