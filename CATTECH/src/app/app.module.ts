@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 // Importa Firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
+import { GoogleMapsModule } from '@angular/google-maps';
 
 //
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
@@ -21,6 +24,8 @@ import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
     AppRoutingModule,
     // Inicializar Firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    IonicStorageModule.forRoot(),
+    GoogleMapsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, SQLite],
   bootstrap: [AppComponent],

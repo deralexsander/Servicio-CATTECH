@@ -3,6 +3,9 @@ import { Platform, ToastController } from '@ionic/angular';
 import { BehaviorSubject , Observable} from 'rxjs';
 import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { Servicio } from '../clases/servicio';  // Importar la clase Servicio
+import { Storage } from '@ionic/storage-angular';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
 
 @Injectable({
   providedIn: 'root'
@@ -140,5 +143,57 @@ export class DatabaseService {
   get dbState(): Observable<boolean> {
     return this.isDbReady.asObservable();
   }
+  
+  // Método para que el usuario elija o capture una imagen
+  async seleccionarImagen(): Promise<string | null> {
+    try {
+      const image = await Camera.getPhoto({
+        quality: 90,
+        resultType: CameraResultType.Base64,
+        source: CameraSource.Prompt // Permite al usuario elegir entre cámara o galería
+      });
+      return image.base64String ?? null; // Retorna la imagen en Base64 si se seleccionó alguna
+    } catch (error) {
+      this.presentToast('Error al seleccionar imagen');
+      return null;
+    }
+  }
+
+  // Método para guardar la imagen en el sistema de archivos
+  async saveImageToFilesystem(base64Data: string, fileName: string): Promise<string> {
+    try {
+      const result = await Filesystem.writeFile({
+        path: `images/${fileName}`,
+        data: base64Data,
+        directory: Directory.Data
+      });
+      return result.uri; // Devuelve la URI para guardarla en la BD
+    } catch (error) {
+      this.presentToast('Error al guardar imagen');
+  
+      // Manejo del error de manera correcta
+      if (error instanceof Error) {
+        throw new Error(error.message); // Proporciona un mensaje de error
+      } else {
+        throw new Error('Error desconocido'); // Maneja cualquier otro tipo de error
+      }
+    }
+  }
+  // Método para agregar el servicio con la ruta de imagen
+  async addServicioConImagen(servicio: Servicio): Promise<void> {
+    // Permite al usuario seleccionar una imagen
+    const base64Image = await this.seleccionarImagen();
+
+    // Guarda la imagen en el sistema de archivos y almacena la ruta en SQLite
+    let imagePath = '';
+    if (base64Image) {
+      imagePath = await this.saveImageToFilesystem(base64Image, `servicio_${new Date().getTime()}.jpg`);
+    }
+
+    // Luego, guarda el servicio en la BD con la ruta de la imagen
+    servicio.imagenes = imagePath; // Actualiza el servicio con la ruta de la imagen
+    await this.addServicio(servicio);
+  }
+
 
 }

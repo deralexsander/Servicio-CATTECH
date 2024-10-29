@@ -8,12 +8,15 @@ import { PuntosPageRoutingModule } from './puntos-routing.module';
 
 import { PuntosPage } from './puntos.page';
 
+import { GoogleMapsModule } from '@angular/google-maps';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PuntosPageRoutingModule
+    PuntosPageRoutingModule,
+    GoogleMapsModule
   ],
   declarations: [PuntosPage]
 })
