@@ -15,14 +15,17 @@ import { GoogleMapsModule } from '@angular/google-maps';
 
 //
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent  // Asegúrate de que este componente esté aquí
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    // Inicializar Firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     IonicStorageModule.forRoot(),
     GoogleMapsModule

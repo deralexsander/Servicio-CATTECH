@@ -49,7 +49,7 @@ export class RegistroPage implements OnInit, AfterViewInit {
 
   async registerSesion() {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+  
     if (this.register.user.trim() === '' || this.register.email.trim() === '' || this.register.password.trim() === '' || this.register.repeatPassword.trim() === '') {
       const alert = await this.alertController.create({
         header: 'Error',
@@ -82,11 +82,19 @@ export class RegistroPage implements OnInit, AfterViewInit {
       // Intentar registrar al usuario con Firebase
       try {
         const userCredential = await this.afAuth.createUserWithEmailAndPassword(this.register.email, this.register.password);
+  
+        // Actualiza el perfil del usuario con el nombre
+        if (userCredential.user) {
+          await userCredential.user.updateProfile({
+            displayName: this.register.user // Asigna el nombre de usuario
+          });
+        }
+  
         // Usuario registrado correctamente, redirige a /tabs/home
         this.router.navigate(['/tabs/home']);
       } catch (error: unknown) {
         const authError = error as AuthError; // Cast de error a AuthError
-        
+  
         // Verifica si el error es que el correo ya está en uso
         let errorMessage: string;
         if (authError.code === 'auth/email-already-in-use') {
@@ -94,13 +102,13 @@ export class RegistroPage implements OnInit, AfterViewInit {
         } else {
           errorMessage = authError.message; // Para otros errores, muestra el mensaje original
         }
-
+  
         const alert = await this.alertController.create({
           header: 'Error',
           message: errorMessage,
           buttons: ['OK']
         });
-
+  
         await alert.present();
       }
     }
