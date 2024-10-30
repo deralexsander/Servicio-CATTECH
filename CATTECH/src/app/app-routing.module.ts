@@ -70,7 +70,8 @@ const routes: Routes = [
   {
     path: 'verclientes',
     loadChildren: () => import('./pages/verclientes/verclientes.module').then( m => m.VerclientesPageModule)
-  },  {
+  },
+  {
     path: 'recuperacion',
     loadChildren: () => import('./pages/recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule)
   },
@@ -79,7 +80,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
   },
 
-
+  {
+    path: 'puntos',
+    loadChildren: () => import('./pages/puntos/puntos.module').then(m => m.PuntosPageModule)
+  }
 
 
 
