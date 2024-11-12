@@ -25,7 +25,14 @@ export class LoginPage implements OnInit {
     private afAuth: AngularFireAuth  // Inyecta Firebase Auth
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // Si el usuario ya está autenticado, lo redirigimos al home
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.router.navigate(['/tabs/home']);
+      }
+    });
+  }
 
   ngAfterViewInit() {
     // Animación del logo con retraso
@@ -49,14 +56,32 @@ export class LoginPage implements OnInit {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
     if (this.login.email.trim() === '' || this.login.password.trim() === '') {
-      // Mensaje de alerta si falta información
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Por favor, complete todos los campos.',
+        buttons: ['OK']
+      });
+      await alert.present();
     } else if (!emailPattern.test(this.login.email)) {
-      // Mensaje de alerta si el correo no es válido
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Correo electrónico no válido.',
+        buttons: ['OK']
+      });
+      await alert.present();
     } else if (this.login.password.length < 8) {
-      // Mensaje de alerta si la contraseña es muy corta
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'La contraseña debe tener al menos 8 caracteres.',
+        buttons: ['OK']
+      });
+      await alert.present();
     } else {
       try {
-        const userCredential = await this.afAuth.signInWithEmailAndPassword(this.login.email.trim(), this.login.password.trim());
+        const userCredential = await this.afAuth.signInWithEmailAndPassword(
+          this.login.email.trim(), 
+          this.login.password.trim()
+        );
         // Si el inicio de sesión es exitoso
         this.router.navigate(['/tabs/home']);
       } catch (error) {
@@ -70,7 +95,6 @@ export class LoginPage implements OnInit {
     }
   }
   
-
   async loginWithGoogle() {
     try {
       const provider = new GoogleAuthProvider(); // Usa GoogleAuthProvider aquí
@@ -78,6 +102,12 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/tabs/home']);
     } catch (error) {
       console.error('Error during Google sign-in:', error);
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Hubo un problema al iniciar sesión con Google.',
+        buttons: ['OK']
+      });
+      await alert.present();
     }
   }
 }

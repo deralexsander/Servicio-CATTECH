@@ -38,7 +38,17 @@ a{
     align-items: flex-end;
     flex-direction: column;
     padding: 20px 25px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
-  }
+}
+
+  /* tamaño logo */
+.logo-size {
+    width: 12%;
+    height: 12%;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+    overflow: hidden; /* Evita que partes de la imagen se desborden */
+}
+
 
 .style-segment{
     padding: 0px 20px 0px 20px; /* | arriba || derecha || abajo || izquierda | */
@@ -61,4 +71,6 @@ a{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+
   
+

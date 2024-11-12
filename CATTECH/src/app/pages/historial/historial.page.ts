@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 import { DatabaseService } from '../../services/database.service'; // Importar el servicio de la base de datos
 import { Servicio } from '../../clases/servicio'; // Importar la clase Servicio
+import { AngularFireAuth } from '@angular/fire/compat/auth';  // Importar AngularFireAuth
 
 @Component({
   selector: 'app-historial',
@@ -11,10 +12,20 @@ import { Servicio } from '../../clases/servicio'; // Importar la clase Servicio
 export class HistorialPage implements OnInit {
   database!: SQLiteObject; // Objeto de la base de datos
   cards: any[] = [];
+  user: any;  // Propiedad para almacenar los datos del usuario
 
-  constructor(private databaseService: DatabaseService) {}
+  constructor(
+    private databaseService: DatabaseService,
+    private afAuth: AngularFireAuth  // Inyectar el servicio de autenticación
+  ) {}
 
   ngOnInit() {
+    // Suscribirse al estado de autenticación del usuario
+    this.afAuth.authState.subscribe(user => {
+      this.user = user;  // Asigna el objeto de usuario
+      console.log(this.user);  // Muestra los detalles del usuario en la consola
+    });
+
     // Inicializar la base de datos y esperar hasta que esté lista
     this.databaseService.crearBD().then((db: SQLiteObject) => {
       this.database = db;

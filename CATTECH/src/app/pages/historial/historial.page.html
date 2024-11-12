@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true" class="no-scroll">
   <div class="container-end">
-    <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
+    <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
   </div>
   
   <div class="container_start-padding_down">
