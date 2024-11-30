@@ -6,7 +6,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -22,17 +23,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule)
   },
   {
-    path: 'pruenas',
-    loadChildren: () => import('./pages/pruenas/pruenas.module').then(m => m.PruenasPageModule)
-  },
-  {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then(m => m.PerfilPageModule),
     canActivate: [AuthGuard]
-  },
-  {
-    path: 'puntos',
-    loadChildren: () => import('./pages/puntos/puntos.module').then(m => m.PuntosPageModule)
   },
   {
     path: 'tabs',
@@ -87,7 +80,12 @@ const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
+  },
+  {
+    path: 'puntos',
+    loadChildren: () => import('./pages/puntos/puntos.module').then( m => m.PuntosPageModule)
   }
+
 ];
 
 @NgModule({

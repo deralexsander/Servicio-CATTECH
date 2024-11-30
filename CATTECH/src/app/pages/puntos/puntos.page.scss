@@ -7,75 +7,20 @@ ion-content {
 a{
     text-decoration: none;
 }
-
-/* tamaño logo */
+  
+  /* tamaño logo */
 .logo-size {
-  width: 12%;
-  height: 12%;
+    width: 12%;
+    height: 12%;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+    overflow: hidden; /* Evita que partes de la imagen se desborden */
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px 0px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
-  --background:#7ccee9;
-  color: rgb(22, 21, 21);
-}
 /* container logo */
 .container-end {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  padding: 20px 25px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
-}
-
-/* titulos */
-.tittle {
-  color: #1a1818;
-  font-size: 2em;
-  font-family: 'Franklin Gothic Medium';
-}
-
-.text{
-  margin-top: 5%;
-  color: #201f1f;
-  font-size: 1em;
-  font-family: 'Franklin Gothic Medium';
-}
-
-/* container textos */
-.container_start-padding_down {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
-}
-.map-container {
-  display: flex;
-  justify-content: center; /* Para centrar horizontalmente */
-  align-items: center; /* Para centrar verticalmente si es necesario */
-  margin-top: 20px; /* Espacio superior */
-}
-
-.map-frame {
-  width: 90%; /* Ajusta el ancho del mapa al 90% del contenedor */
-  height: 400px; /* Puedes ajustar la altura como prefieras */
-  border-radius: 15px; /* Bordes redondeados */
-  border: 0; /* Quita el borde predeterminado del iframe */
-}
-.card-puntos {
-  margin-top: 5%;
-  width: 80%;
-  height: 50%;
-  border-radius: 15px;
-  background-color: #41b1d3;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color :#1a1818
-}
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 20px 25px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
+  }
