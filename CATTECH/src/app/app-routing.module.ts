@@ -84,7 +84,11 @@ const routes: Routes = [
   {
     path: 'puntos',
     loadChildren: () => import('./pages/puntos/puntos.module').then( m => m.PuntosPageModule)
+  },  {
+    path: 'dispositivos',
+    loadChildren: () => import('./pages/dispositivos/dispositivos.module').then( m => m.DispositivosPageModule)
   }
+
 
 ];
 

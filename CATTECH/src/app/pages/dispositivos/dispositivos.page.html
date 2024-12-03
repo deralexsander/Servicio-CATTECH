@@ -1,30 +1,13 @@
-<ion-content [fullscreen]="true">
-  <div class="container-end">
-    <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
-  </div>
-  
-  <div class="container_start-padding_down">
-    <ion-text class="tittle">Historial de dispositivos</ion-text>
-  </div>
-  
-  <ion-content>
-      <ion-card color="success" *ngFor="let item of cardsWithDevices">
-        <ion-card-header>
-          <ion-card-title>{{ item.card.subtitle }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-list *ngIf="item.devices.length > 0">
-            <ion-item *ngFor="let device of item.devices">
-              <ion-label>
-                {{ device.device }} - {{ device.brand }} - {{ device.model }} ({{ device.date }})
-              </ion-label>
-            </ion-item>
-          </ion-list>
-          <ion-text *ngIf="item.devices.length === 0">
-            No hay dispositivos asociados.
-          </ion-text>
-        </ion-card-content>
-      </ion-card>
-  </ion-content>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>dispositivos</ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">dispositivos</ion-title>
+    </ion-toolbar>
+  </ion-header>
 </ion-content>

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Servicio } from 'src/app/clases/servicio';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { VisitasService } from 'src/app/services/visitas.service';
+import { ToastController } from '@ionic/angular'; // Importa el ToastController
 
 @Component({
   selector: 'app-visitas',
@@ -11,14 +13,20 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 })
 export class VisitasPage implements OnInit {
   visitaForm!: FormGroup;
-  imagenes: File[] = [];
+  imagenes: string[] = [];
   maxImages = 5;
 
-  constructor(private fb: FormBuilder, private databaseService: DatabaseService) {}
+  constructor(
+    private fb: FormBuilder,
+    private databaseService: DatabaseService,
+    private visitasService: VisitasService,
+    private toastController: ToastController // Inyecta el ToastController
+  ) {}
 
   ngOnInit() {
     this.visitaForm = this.fb.group({
       cliente: ['', Validators.required],
+      titulo: ['', Validators.required], // Asegúrate de que el campo 'titulo' sea requerido
       fecha: ['', Validators.required],
       hora: ['', Validators.required],
       direccion: ['', Validators.required],
@@ -27,40 +35,43 @@ export class VisitasPage implements OnInit {
   }
 
   get cliente() { return this.visitaForm.get('cliente'); }
+  get titulo() { return this.visitaForm.get('titulo'); }
   get fecha() { return this.visitaForm.get('fecha'); }
   get hora() { return this.visitaForm.get('hora'); }
   get direccion() { return this.visitaForm.get('direccion'); }
   get motivo() { return this.visitaForm.get('motivo'); }
 
-  onFileChange(event: any) {
-    const files: FileList = event.target.files;
-    if (files.length > this.maxImages) {
-      alert(`Solo puedes subir hasta ${this.maxImages} imágenes.`);
-      return;
-    }
-    this.imagenes = Array.from(files);
-  }
-
   async onSubmit() {
-    if (this.visitaForm.valid && this.imagenes.length <= this.maxImages) {
-      const visitaData = this.visitaForm.value;
+    if (this.visitaForm.valid) {
+      const visita = this.visitaForm.value;
+      visita.imagenes = this.imagenes;
 
-      // Crear objeto `Servicio` con los datos del formulario
-      const nuevoServicio: Servicio = {
-        fecha: visitaData.fecha,
-        hora: visitaData.hora,
-        motivo: visitaData.motivo,
-        direccion: visitaData.direccion,
-        imagenes: '', // Se actualizará en `addServicioConImagen`
-        nombre_dispositivo: 'Dispositivo Ejemplo', // Asigna el nombre del dispositivo
-        estado_servicio: 'Pendiente', // Estado inicial
-        tipo_servicio: 'Mantenimiento', // Tipo de servicio
-        cliente_id: Number(visitaData.cliente) // ID del cliente
-      };
+      try {
+        await this.visitasService.addVisita(visita);
+        console.log('Visita guardada con éxito');
 
-      // Llama a `addServicioConImagen` en `DatabaseService` para guardar el servicio y la imagen
-      await this.databaseService.addServicioConImagen(nuevoServicio);
-      console.log('Visita agendada:', visitaData);
+        // Muestra un mensaje de confirmación
+        const toast = await this.toastController.create({
+          message: 'Enviado correctamente.',
+          duration: 2000,
+          color: 'success'
+        });
+        await toast.present();
+
+        // Resetea el formulario y limpia las imágenes
+        this.visitaForm.reset();
+        this.imagenes = [];
+      } catch (error) {
+        console.error('Error al guardar la visita:', error);
+
+        // Muestra un mensaje de error
+        const toast = await this.toastController.create({
+          message: 'Hubo un error al enviar. Intenta nuevamente.',
+          duration: 2000,
+          color: 'danger'
+        });
+        await toast.present();
+      }
     }
   }
 
@@ -73,7 +84,6 @@ export class VisitasPage implements OnInit {
         source: CameraSource.Camera
       });
 
-      // Aquí puedes usar 'image.webPath' o 'image.path' para mostrar la imagen o guardarla
       console.log('Imagen capturada:', image.webPath);
     } catch (error) {
       console.error('Error al tomar la foto:', error);

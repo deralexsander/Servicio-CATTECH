@@ -1,25 +1,27 @@
-
-
 <ion-content [fullscreen]="true" class="agendar-visita-content">
   <a routerLink="/tabs/home" class="container-start">
     <ion-text class="text">< atras </ion-text>
   </a>
 
-    <div class="container-end">
-      <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
-    </div>
-    
-    <div class="container_start-padding_down">
-      <ion-text class="tittle">Agendar Visita</ion-text>
-    </div>
-  
-  
+  <div class="container-end">
+    <img routerLink="/perfil" src="assets/isotipos/logo perfil.png" alt="logo" class="logo-size" />
+  </div>
+
+  <!-- Título de la página -->
+  <div class="container_start-padding_down">
+    <ion-text class="tittle">Agendar Visita</ion-text>
+  </div>
 
   <ion-content>
+    <!-- Formulario de agendar visita -->
     <form [formGroup]="visitaForm" (ngSubmit)="onSubmit()">
       <ion-item>
         <ion-label>Cliente</ion-label>
         <ion-input formControlName="cliente" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Título</ion-label>
+        <ion-input formControlName="titulo" type="text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Fecha</ion-label>
@@ -37,12 +39,9 @@
         <ion-label>Motivo</ion-label>
         <ion-input formControlName="motivo" type="text"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Imágenes</ion-label>
-        <input type="file" (change)="onFileChange($event)" multiple>
-        <ion-button (click)="takePicture()">Tomar Foto</ion-button>
-      </ion-item>
 
+      <!-- Botón de envío del formulario -->
       <ion-button expand="full" type="submit" [disabled]="!visitaForm.valid">Agendar Visita</ion-button>
     </form>
   </ion-content>
+</ion-content>
