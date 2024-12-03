@@ -1,6 +1,25 @@
 
 <ion-content [fullscreen]="true">
-  <div class="container-end">
-    <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
-  </div>
+    <div class="container-end">
+      <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
+    </div>
+    
+    <div class="container_start-padding_down">
+      <ion-text class="tittle">Historial de resumenes (todos)</ion-text>
+    </div>
+
+    <div class="container-center">
+      <ion-button routerLink="/agendaadmin" class="style-btn">
+        <img src="assets/icon/agendar.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">ver agenda (pendientes)</ion-text>
+      </ion-button>
+      <ion-button routerLink="/agendaadmin" class="style-btn">
+        <img src="assets/icon/agendar.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">ver agenda (trabajando)</ion-text>
+      </ion-button>
+      <ion-button routerLink="/agendaadmin" class="style-btn">
+        <img src="assets/icon/agendar.png" alt="icon" class="icon-size-small" />
+        <ion-text class="text-center-white">ver agenda (listos)</ion-text>
+      </ion-button>
+    </div>
 </ion-content>

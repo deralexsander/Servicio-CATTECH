@@ -76,18 +76,26 @@ const routes: Routes = [
     path: 'editarperfil',
     loadChildren: () => import('./pages/editarperfil/editarperfil.module').then(m => m.EditarperfilPageModule)
   },
+  {
+    path: 'puntos',
+    loadChildren: () => import('./pages/puntos/puntos.module').then( m => m.PuntosPageModule)
+  },
+  {
+    path: 'dispositivos',
+    loadChildren: () => import('./pages/dispositivos/dispositivos.module').then( m => m.DispositivosPageModule)
+  },
+  {
+    path: 'agendaadmin',
+    loadChildren: () => import('./pages/agendaadmin/agendaadmin.module').then( m => m.AgendaadminPageModule)
+  },
   // Ruta para la página 404
   {
     path: '**',
     component: PageNotFoundComponent
-  },
-  {
-    path: 'puntos',
-    loadChildren: () => import('./pages/puntos/puntos.module').then( m => m.PuntosPageModule)
   },  {
-    path: 'dispositivos',
-    loadChildren: () => import('./pages/dispositivos/dispositivos.module').then( m => m.DispositivosPageModule)
-  }
+    path: 'edit-visit',
+    loadChildren: () => import('./pages/edit-visit/edit-visit.module').then( m => m.EditVisitPageModule)
+  },
 
 
 ];
