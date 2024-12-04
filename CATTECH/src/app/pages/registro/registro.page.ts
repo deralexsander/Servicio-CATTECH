@@ -3,6 +3,7 @@ import { AlertController, AnimationController, Animation } from '@ionic/angular'
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthError } from 'firebase/auth'; // Importar el tipo de error de Firebase
+import { UserService } from 'src/app/services/user.service'; // Importar UserService
 
 @Component({
   selector: 'app-registro',
@@ -24,7 +25,8 @@ export class RegistroPage implements OnInit, AfterViewInit {
     private alertController: AlertController,
     private router: Router,
     private animationCtrl: AnimationController,
-    private afAuth: AngularFireAuth // Inyección de AngularFireAuth
+    private afAuth: AngularFireAuth, // Inyección de AngularFireAuth
+    private userService: UserService // Inyección de UserService
   ) {}
 
   ngOnInit() {}
@@ -88,6 +90,9 @@ export class RegistroPage implements OnInit, AfterViewInit {
           await userCredential.user.updateProfile({
             displayName: this.register.user // Asigna el nombre de usuario
           });
+  
+          // Crear usuario en Firestore
+          await this.userService.createUser(userCredential.user.uid, this.register.email, 'usuario');
         }
   
         // Usuario registrado correctamente, redirige a /tabs/home

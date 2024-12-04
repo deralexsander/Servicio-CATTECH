@@ -1,0 +1,23 @@
+/* fondo */
+ion-content {
+    --background:#c4dee7;
+}
+  
+  /* sacar el subrrayado */
+a{
+    text-decoration: none;
+}
+
+.container-start {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  display: inline-block;
+  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
+/* titulos-mas pequeños */
+.text{
+    color: #413f3f;
+    font-size: 1.6em;
+    font-family: 'Franklin Gothic Medium';
+  }
