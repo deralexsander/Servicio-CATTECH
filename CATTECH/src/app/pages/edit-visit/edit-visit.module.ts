@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule aquí
 
 import { IonicModule } from '@ionic/angular';
 
@@ -12,6 +12,7 @@ import { EditVisitPage } from './edit-visit.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule, // Agrega ReactiveFormsModule aquí
     IonicModule,
     EditVisitPageRoutingModule
   ],

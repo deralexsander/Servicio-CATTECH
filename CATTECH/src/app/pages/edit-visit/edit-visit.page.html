@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>edit-visit</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">edit-visit</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form [formGroup]="visitaForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Cliente</ion-label>
+      <ion-input formControlName="cliente" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Título</ion-label>
+      <ion-input formControlName="titulo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-input formControlName="fecha" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora</ion-label>
+      <ion-input formControlName="hora" type="time"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dirección</ion-label>
+      <ion-input formControlName="direccion" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Motivo</ion-label>
+      <ion-input formControlName="motivo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-input formControlName="estado" type="text"></ion-input> <!-- Nuevo campo -->
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!visitaForm.valid">Actualizar Visita</ion-button>
+  </form>
 </ion-content>

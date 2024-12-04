@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { first, switchMap } from 'rxjs/operators';
 
 interface Visita {
+  id: string; // ID único generado por Firestore
   contador: number; // Contador para las visitas
   titulo: string;  // Título de la visita
   cliente: string;
@@ -15,6 +16,7 @@ interface Visita {
   motivo: string;
   imagenes: string[]; // URLs de las imágenes asociadas a la visita
   estado: string; // "en espera" o "listo"
+  mensaje: string; // Mensaje adicional
 }
 
 @Injectable({
@@ -28,6 +30,11 @@ export class VisitasService {
     private afAuth: AngularFireAuth // Servicio de autenticación
   ) {}
 
+  // Método para obtener una visita por ID
+  getVisitaPorId(id: string): Observable<Visita | undefined> {
+    return this.firestore.collection<Visita>(this.collectionName).doc(id).valueChanges();
+  }
+
   async addVisita(visita: Visita): Promise<void> {
     const user = await this.afAuth.authState.pipe(first()).toPromise();
     if (user && user.email) {
@@ -39,6 +46,11 @@ export class VisitasService {
       // Verificar que el título no esté vacío
       if (!visita.titulo || visita.titulo.trim() === '') {
         throw new Error('El título de la visita no puede estar vacío');
+      }
+
+      // Verificar que el mensaje no esté vacío o establecer un mensaje por defecto si lo está
+      if (!visita.mensaje) {
+        visita.mensaje = 'Sin mensaje'; // Mensaje por defecto
       }
 
       // Obtener el contador más alto de las visitas existentes del usuario
@@ -59,9 +71,12 @@ export class VisitasService {
         // Asignar el nuevo contador a la visita
         visita.contador = nuevoContador;
 
-        // Agregar la visita a Firestore
+        // Agregar la visita a Firestore y obtener el ID del documento
         const docRef = await this.firestore.collection(this.collectionName).add(visita);
         console.log('Documento agregado con ID:', docRef.id);
+
+        // Actualizar el ID de la visita con el ID del documento
+        await docRef.update({ id: docRef.id });
       } catch (error) {
         console.error('Error al obtener el contador de visitas:', error);
         throw new Error('Error al obtener el contador de visitas');
@@ -100,6 +115,21 @@ export class VisitasService {
     } catch (error) {
       console.error('Error al actualizar el estado de la visita:', error);
       throw new Error('Error al actualizar el estado de la visita');
+    }
+  }
+
+  async updateVisita(id: string, visita: Visita): Promise<void> {
+    try {
+      // Asegurarse de que el mensaje esté actualizado si se proporciona uno nuevo
+      if (visita.mensaje && visita.mensaje.trim() === '') {
+        throw new Error('El mensaje no puede estar vacío');
+      }
+
+      await this.firestore.collection(this.collectionName).doc(id).update(visita);
+      console.log('Visita actualizada');
+    } catch (error) {
+      console.error('Error al actualizar la visita', error);
+      throw new Error('Error al actualizar la visita');
     }
   }
 }

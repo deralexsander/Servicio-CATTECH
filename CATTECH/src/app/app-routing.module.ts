@@ -88,16 +88,16 @@ const routes: Routes = [
     path: 'agendaadmin',
     loadChildren: () => import('./pages/agendaadmin/agendaadmin.module').then( m => m.AgendaadminPageModule)
   },
+  {
+    path: 'edit-visit/:id',
+    loadChildren: () => import('./pages/edit-visit/edit-visit.module').then( m => m.EditVisitPageModule)
+  },
+
   // Ruta para la página 404
   {
     path: '**',
     component: PageNotFoundComponent
-  },  {
-    path: 'edit-visit',
-    loadChildren: () => import('./pages/edit-visit/edit-visit.module').then( m => m.EditVisitPageModule)
   },
-
-
 ];
 
 @NgModule({
