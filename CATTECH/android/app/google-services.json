@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "267605736026",
+    "firebase_url": "https://cattech-b2fa5-default-rtdb.firebaseio.com",
+    "project_id": "cattech-b2fa5",
+    "storage_bucket": "cattech-b2fa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267605736026:android:b8d78b0fdff1479101f663",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267605736026-bvhekag6je9pj51srs7ogus47lv15l6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "14db2f4d450dcd32553d57373381ea44cea0d1a4"
+          }
+        },
+        {
+          "client_id": "267605736026-9ev7s0rh9qn7nfs6a63j2bjcvkilbchc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkO8fA88oS-kDOdX0mMDLk2krnJP5FfqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267605736026-9ev7s0rh9qn7nfs6a63j2bjcvkilbchc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
