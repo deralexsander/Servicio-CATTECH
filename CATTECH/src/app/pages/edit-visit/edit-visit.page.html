@@ -9,6 +9,10 @@
       <ion-input formControlName="cliente" type="text"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label>correo</ion-label>
+      <ion-input formControlName="correo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label>Título</ion-label>
       <ion-input formControlName="titulo" type="text"></ion-input>
     </ion-item>
@@ -30,8 +34,11 @@
     </ion-item>
     <ion-item>
       <ion-label>Estado</ion-label>
-      <ion-input formControlName="estado" type="text"></ion-input> <!-- Nuevo campo -->
+      <ion-input formControlName="estado" type="text"></ion-input>
     </ion-item>
     <ion-button expand="full" type="submit" [disabled]="!visitaForm.valid">Actualizar Visita</ion-button>
   </form>
+
+  <!-- Botón para enviar correo -->
+  <ion-button expand="full" (click)="enviarCorreo()">Mandar mensaje por correo</ion-button>
 </ion-content>

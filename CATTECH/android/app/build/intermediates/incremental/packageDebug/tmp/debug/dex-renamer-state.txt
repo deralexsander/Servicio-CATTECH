@@ -1,4 +1,4 @@
-#Wed Dec 04 00:13:14 CLST 2024
+#Wed Dec 04 00:59:17 CLST 2024
 base.0=C\:\\Users\\comun\\OneDrive\\Escritorio\\Servicio-CATTECH\\CATTECH\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\comun\\OneDrive\\Escritorio\\Servicio-CATTECH\\CATTECH\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\12\\classes.dex
 base.10=C\:\\Users\\comun\\OneDrive\\Escritorio\\Servicio-CATTECH\\CATTECH\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

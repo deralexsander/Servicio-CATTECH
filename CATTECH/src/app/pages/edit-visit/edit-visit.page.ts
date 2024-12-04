@@ -30,7 +30,8 @@ export class EditVisitPage implements OnInit {
       hora: ['', Validators.required],
       direccion: ['', Validators.required],
       motivo: ['', Validators.required],
-      estado: ['', Validators.required] // Agregado el control de estado
+      estado: ['', Validators.required], // Agregado el control de estado
+      correo: ['', [Validators.required, Validators.email]] // Validación de correo electrónico
     });
 
     this.loadVisita();
@@ -66,6 +67,34 @@ export class EditVisitPage implements OnInit {
         });
         await toast.present();
       }
+    }
+  }
+
+  enviarCorreo() {
+    const cliente = this.visitaForm.get('cliente')?.value;
+    const correo = this.visitaForm.get('correo')?.value; // Corregido el nombre del campo para coincidir
+    const asunto = 'Detalles de la visita';
+    const cuerpo = `
+      Cliente: ${cliente}
+      Fecha: ${this.visitaForm.get('fecha')?.value}
+      Hora: ${this.visitaForm.get('hora')?.value}
+      Dirección: ${this.visitaForm.get('direccion')?.value}
+      Motivo: ${this.visitaForm.get('motivo')?.value}
+      Estado: ${this.visitaForm.get('estado')?.value}
+    `;
+
+    // Verifica si el correo electrónico es válido antes de abrir mailto
+    if (correo) {
+      window.location.href = `mailto:${correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+    } else {
+      console.error('El correo electrónico no está especificado');
+      // Agrega un manejo de errores adecuado si el correo no está disponible
+      const toast = this.toastController.create({
+        message: 'El correo electrónico no está especificado. Por favor, verifica los datos.',
+        duration: 2000,
+        color: 'danger'
+      });
+      toast.then(toast => toast.present());
     }
   }
 }

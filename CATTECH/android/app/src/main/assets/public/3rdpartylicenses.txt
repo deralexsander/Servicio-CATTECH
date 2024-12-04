@@ -229,6 +229,8 @@ firebase/compat/auth
 
 firebase/compat/firestore
 
+firebase/firestore
+
 idb
 ISC
 ISC License (ISC)
