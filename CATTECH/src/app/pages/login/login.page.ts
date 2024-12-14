@@ -95,19 +95,4 @@ export class LoginPage implements OnInit {
     }
   }
   
-  async loginWithGoogle() {
-    try {
-      const provider = new GoogleAuthProvider(); // Usa GoogleAuthProvider aquí
-      await this.afAuth.signInWithPopup(provider);
-      this.router.navigate(['/tabs/home']);
-    } catch (error) {
-      console.error('Error during Google sign-in:', error);
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Hubo un problema al iniciar sesión con Google.',
-        buttons: ['OK']
-      });
-      await alert.present();
-    }
-  }
 }

@@ -3,25 +3,16 @@ ion-content {
   --background:#c4dee7;
 }
 
-
 /* sacar el subrrayado */
 a{
   text-decoration: none;
 }
 
-.container-start {
-display: flex;
-align-items: start;
-flex-direction: column;
-display: inline-block;
-padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
-}
-
 /* titulos-mas pequeños */
 .text{
-color: #413f3f;
-font-size: 1.6em;
-font-family: 'Franklin Gothic Medium';
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
 }
 
 /* titulos */
@@ -31,192 +22,62 @@ font-family: 'Franklin Gothic Medium';
   font-family: 'Franklin Gothic Medium';
 }
 
-/* container img */
-.container-center {
-  position: relative; /* Permite el uso de posicionamiento absoluto para las imágenes */
+.container-start {
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  padding: 0px 0px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
+  align-items: start;
+  flex-direction: column;
+  display: inline-block;
+  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
 
-  }
-
-
-.text-mini{
+/* container textos */
+.container_start-padding_down {
   display: flex;
-  justify-content: start; /* Centra el contenido horizontalmente */
-  align-items: start; /* Centra el contenido verticalmente */
-  color: #413f3f;
-  font-size: 1.0em;
-  font-family: 'Franklin Gothic Medium';
-}
-
-.style-input-fecha{
-  --border-radius: 15px !important; /* Redondear las esquinas */
-  --background: #ffffff; /* Cambiar el color de fondo */
-  color: #ffffff;
-  font-family: sans-serif;
-}
-
-.style-input-text{
-  --border-radius: 15px !important; /* Redondear las esquinas */
-  --background: #ffffff; /* Cambiar el color de fondo */
-  color: #000000;
-  font-family: sans-serif;
-}
-.style-input{
-  --border-radius: 15px !important; /* Redondear las esquinas */
-  --background: #ffffff; /* Cambiar el color de fondo */
-  color: #000000;
-  font-family: sans-serif;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
 }
 
 .container-input {
-  padding: 5px 20px 5px 20px; /* | arriba || derecha || abajo || izquierda | */
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+  color: #333333;
+  padding: 5px 10px 5px 10px; /* | arriba || derecha || abajo || izquierda | */
+  font-family: sans-serif;
 }
-.container_center-padding_up {
+
+ion-input{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: white; /* Cambiar el color de fondo */
+  --box-shadow: none; /* Quitar sombra si es necesario */
+  padding: 10px; /* Asegurar que el contenido no toque las esquinas redondeadas */
+}
+
+.ion-input-date-and-time{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: linear-gradient(to right,#ffffff,#ffffff,#ffffff,#ffffff,#4040e2);
+  --box-shadow: none; /* Quitar sombra si es necesario */
+  padding: 10px; /* Asegurar que el contenido no toque las esquinas redondeadas */
+}
+
+.container-center-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+  width: 100%;            
+  margin-top: 35px; 
 }
 
-.style-btn-white{
-  --background: #ffffff;
-  width: 55%;
+.btn-1{
   font-size: 1.2em;
-  --border-radius: 20px; /* modificar los bordes */
-}
-
-
-
-
-
-
-
-
-
-
-
-.icon-size {
-position: relative; /* Para que el icono pequeño se posicione en relación a esta imagen */
-z-index: 1; /* Asegura que esta imagen esté en el fondo */
-width: 35%;
-height: 35%;
-}
-
-
-
-.text{
-color: #413f3f;
-font-size: 1.6em;
-font-family: 'Franklin Gothic Medium';
-}
-.text-mini{
-display: flex;
-justify-content: start; /* Centra el contenido horizontalmente */
-align-items: start; /* Centra el contenido verticalmente */
-color: #413f3f;
-font-size: 1.0em;
-font-family: 'Franklin Gothic Medium';
-}
-
-.container_center-padding_up {
-display: flex;
-align-items: center;
-flex-direction: column;
-padding: 10px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
-}
-.style-btn-white{
---background: #ffffff;
-width: 55%;
-font-size: 1.2em;
---border-radius: 20px; /* modificar los bordes */
-}
-
-.style-btn-red{
---background: #f13d3d;
-width: 55%;
-font-size: 1.2em;
---border-radius: 20px; /* modificar los bordes */
-}
-
-.text-center-black{
-text-align: center;
-color: rgb(3, 3, 3);
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
-.text-center-white{
-text-align: center;
-color: rgb(255, 255, 255);
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
-
-
-/* container logo */
-.container-end {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  padding: 12px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
-}
-
-/* titulos */
-.tittle {
-  color: #000000;
-  font-size: 2.5em;
   font-family: 'Franklin Gothic Medium';
-}
-
-ion-list {
-    background-color: #c4dee7;
-}
-        
-ion-item {
-    background-color: #6a3cd6;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    --border-width: 0; /* Elimina las líneas de borde por defecto */
-    background: #47b9ee;
-    border-radius: 10px;
-    margin: 10px 0;
-    
-  }
-  
-ion-text {
-    margin-left: 16px;
-    
-  }
-  
-
-.agendar-visita-content {
-    --background: #94cbe0; /* Fondo claro para mejor contraste */
-}
-ion-label {
-    
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-ion-datetime, ion-textarea, input[type="file"] {
-    --padding-start: 16px;
-    --padding-end: 16px;
-    --inner-border-width: 0px;
-}
-            
-.logo {
   width: 60%;
-  height: 60%;
+  color: white;
+  --background: #23C3FA;
+  margin-top: 10px;
 }
 
-/* tamaño logo */
-.logo-size {
-  width: 12%;
-  height: 12%;
-}
-.style-btn{
-  --background: #283df7;
-  width: 90%;
-  font-size: 1.2em;
-  --border-radius: 15px; /* modificar los bordes */
-  
-}
+
