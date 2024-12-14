@@ -15,9 +15,14 @@
       <ion-text>Cliente</ion-text>
       <ion-input fill="outline" type="text" formControlName="cliente" required></ion-input>
     </div>
-    <div class="container-input" >
-      <ion-text>Título</ion-text>
-      <ion-input fill="outline" type="text" formControlName="titulo" required></ion-input>
+
+    <div class="container-select">
+      <ion-text>Titulo</ion-text>
+        <ion-select formControlName="titulo" label-placement="stacked" placeholder="Selecciona un título" fill="outline">
+          <ion-select-option value="Reparación">Reparación</ion-select-option>
+          <ion-select-option value="Mantenimiento">Mantenimiento</ion-select-option>
+          <ion-select-option value="Revisión">Revisión</ion-select-option>
+        </ion-select>
     </div>
     <div class="container-input" >
       <ion-text>Fecha</ion-text>
@@ -43,3 +48,4 @@
   </form>
 
 </ion-content>
+

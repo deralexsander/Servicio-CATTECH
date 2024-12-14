@@ -48,6 +48,23 @@ a{
   font-family: sans-serif;
 }
 
+.container-select {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+  color: #333333;
+  padding: 5px 10px 5px 10px; /* | arriba || derecha || abajo || izquierda | */
+  font-family: sans-serif;
+}
+
+ion-select{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: white; /* Cambiar el color de fondo */
+  --box-shadow: none; /* Quitar sombra si es necesario */
+}
+
+
 ion-input{
   --border-radius: 15px !important; /* Redondear las esquinas */
   --background: white; /* Cambiar el color de fondo */
