@@ -45,26 +45,24 @@ export class VisitasPage implements OnInit {
     if (this.visitaForm.valid) {
       const visita = this.visitaForm.value;
       visita.imagenes = this.imagenes;
-
+      visita.tipo_tarjeta = 'visita'; // Establece el tipo de tarjeta como "visita"
+  
       try {
         await this.visitasService.addVisita(visita);
         console.log('Visita guardada con éxito');
-
-        // Muestra un mensaje de confirmación
+  
         const toast = await this.toastController.create({
           message: 'Enviado correctamente.',
           duration: 2000,
           color: 'success'
         });
         await toast.present();
-
-        // Resetea el formulario y limpia las imágenes
+  
         this.visitaForm.reset();
         this.imagenes = [];
       } catch (error) {
         console.error('Error al guardar la visita:', error);
-
-        // Muestra un mensaje de error
+  
         const toast = await this.toastController.create({
           message: 'Hubo un error al enviar. Intenta nuevamente.',
           duration: 2000,
@@ -74,6 +72,7 @@ export class VisitasPage implements OnInit {
       }
     }
   }
+  
 
   async takePicture() {
     try {

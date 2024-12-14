@@ -1,11 +1,25 @@
 /* fondo */
 ion-content {
-    --background:#c4dee7;
+  --background:#c4dee7;
 }
-  
-  /* sacar el subrrayado */
+
+/* sacar el subrrayado */
 a{
-    text-decoration: none;
+  text-decoration: none;
+}
+
+/* titulos-mas pequeños */
+.text{
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
+}
+
+/* titulos */
+.tittle {
+  color: #413f3f;
+  font-size: 2.5em;
+  font-family: 'Franklin Gothic Medium';
 }
 
 .container-start {
@@ -16,9 +30,71 @@ a{
   padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
 }
 
-/* titulos-mas pequeños */
-.text{
-  color: #413f3f;
-  font-size: 1.6em;
-  font-family: 'Franklin Gothic Medium';
+/* container textos */
+.container_start-padding_down {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
 }
+
+.container-input {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+  color: #333333;
+  padding: 5px 10px 5px 10px; /* | arriba || derecha || abajo || izquierda | */
+  font-family: sans-serif;
+}
+
+.container-select {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+  color: #333333;
+  padding: 5px 10px 5px 10px; /* | arriba || derecha || abajo || izquierda | */
+  font-family: sans-serif;
+}
+
+ion-select{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: white; /* Cambiar el color de fondo */
+  --box-shadow: none; /* Quitar sombra si es necesario */
+}
+
+
+ion-input{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: white; /* Cambiar el color de fondo */
+  --box-shadow: none; /* Quitar sombra si es necesario */
+  padding: 10px; /* Asegurar que el contenido no toque las esquinas redondeadas */
+}
+
+.ion-input-date-and-time{
+  --border-radius: 15px !important; /* Redondear las esquinas */
+  --background: linear-gradient(to right,#ffffff,#ffffff,#ffffff,#ffffff,#4040e2);
+  --box-shadow: none; /* Quitar sombra si es necesario */
+  padding: 10px; /* Asegurar que el contenido no toque las esquinas redondeadas */
+}
+
+.container-center-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;            
+  margin-top: 35px; 
+}
+
+.btn-1{
+  font-size: 1.2em;
+  font-family: 'Franklin Gothic Medium';
+  width: 60%;
+  color: white;
+  --background: #23C3FA;
+  margin-top: 10px;
+}
+
+

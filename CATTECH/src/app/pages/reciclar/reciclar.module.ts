@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';  // Importar ReactiveFormsModule
 
 import { IonicModule } from '@ionic/angular';
 
@@ -12,6 +13,7 @@ import { ReciclarPage } from './reciclar.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,  // Asegúrate de agregarlo aquí
     IonicModule,
     ReciclarPageRoutingModule
   ],

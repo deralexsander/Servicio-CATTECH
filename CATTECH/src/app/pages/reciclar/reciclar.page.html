@@ -1,7 +1,49 @@
 <ion-content [fullscreen]="true">
-
   <a routerLink="/tabs/home" class="container-start">
-      <ion-text class="text">< Cancelar </ion-text>
+    <ion-text class="text">< Cancelar </ion-text>
   </a>
 
+  <!-- Título de la página -->
+  <div class="container_start-padding_down">
+    <ion-text class="tittle">Agendar Donación</ion-text>
+  </div>
+
+  <!-- Formulario para la donación -->
+  <form [formGroup]="reciclarForm" (ngSubmit)="onSubmit()">
+    <div class="container-input">
+      <ion-text>Cliente</ion-text>
+      <ion-input fill="outline" type="text" formControlName="cliente" required></ion-input>
+    </div>
+
+    <div class="container-select">
+      <ion-text>Título</ion-text>
+      <ion-select formControlName="titulo" label-placement="stacked" placeholder="Selecciona un título" fill="outline">
+        <ion-select-option value="donar">Donar</ion-select-option>
+      </ion-select>
+    </div>
+
+    <div class="container-input">
+      <ion-text>Fecha</ion-text>
+      <ion-input class="ion-input-date-and-time" fill="outline" type="date" formControlName="fecha" required></ion-input>
+    </div>
+
+    <div class="container-input">
+      <ion-text>Hora</ion-text>
+      <ion-input class="ion-input-date-and-time" fill="outline" type="time" formControlName="hora" required></ion-input>
+    </div>
+
+    <div class="container-input">
+      <ion-text>Dirección</ion-text>
+      <ion-input fill="outline" type="text" formControlName="direccion" required></ion-input>
+    </div>
+
+    <div class="container-input">
+      <ion-text>Motivo</ion-text>
+      <ion-input fill="outline" type="text" formControlName="motivo" required></ion-input>
+    </div>
+
+    <div class="container-center-btn">
+      <ion-button shape="round" class="btn-1" type="submit" [disabled]="!reciclarForm.valid">Enviar</ion-button>
+    </div>
+  </form>
 </ion-content>

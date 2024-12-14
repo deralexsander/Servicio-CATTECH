@@ -69,10 +69,11 @@ a{
   font-family: 'Franklin Gothic Medium';
 }
 /* texto centrado blanco */
-.text-center-white{
+.text-center-white-content{
   text-align: center;
   color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0px 0px 20px 10px;
 }
 
 /* tamaño tarjetas */
@@ -97,6 +98,7 @@ a{
   text-align: center;
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2em;
 }
 
 /* tamaño tarjetas */
@@ -191,4 +193,20 @@ ion-text {
 .dropdown-menu button:hover {
   background-color: #ce2222; /* Cambia el fondo al pasar el ratón */
   color: white; /* Cambia el color del texto al pasar el ratón (opcional) */
+}
+
+
+.en-espera {
+  background-color: #ebe815;
+  color: white; /* Para mejorar la legibilidad */
+}
+
+.listo {
+  background-color: rgb(28, 197, 28);
+  color: white; /* Para mejorar la legibilidad */
+}
+
+.trabajando {
+  background-color: red;
+  color: white; /* Para mejorar la legibilidad */
 }

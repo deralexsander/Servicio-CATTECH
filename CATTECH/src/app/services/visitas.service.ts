@@ -42,7 +42,6 @@ export class VisitasService {
 
       // Inicializar valores por defecto
       visita.estado = 'en espera';
-      visita.tipo_tarjeta = 'visita'; // Establece el tipo de tarjeta como "visita"
 
       // Verificar que el título no esté vacío
       if (!visita.titulo || visita.titulo.trim() === '') {
