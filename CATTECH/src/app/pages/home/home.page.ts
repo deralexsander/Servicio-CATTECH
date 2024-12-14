@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CardService, Card } from '../../card.service'; 
+import { Component, OnInit } from '@angular/core'; 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { VisitasService } from 'src/app/services/visitas.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,14 +10,16 @@ import { VisitasService } from 'src/app/services/visitas.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  cards: Card[] = [];
-  visitas: any[] = [];
-  contadorMaximo: number = 0;
-  maxCards = 4;
+  visitas: any[] = []; // Propiedad para almacenar los datos de visitas
+  contadorMaximo: number = 0; // Propiedad para almacenar el contador más grande
   user: any; 
   showMenu = false; // Inicializa en false
 
-  constructor(private cardService: CardService, private afAuth: AngularFireAuth, private router: Router, private visitasService: VisitasService) {}
+  constructor(
+    private afAuth: AngularFireAuth, 
+    private router: Router, 
+    private visitasService: VisitasService
+  ) {}
 
   ngOnInit() {
     // Suscribirse al estado de autenticación del usuario
@@ -31,7 +33,7 @@ export class HomePage implements OnInit {
       visitas => {
         console.log('Datos de visitas recibidos:', visitas); // Imprime los datos en la consola
         this.visitas = visitas; // Asigna los datos obtenidos a la propiedad visitas
-  
+        
         // Ordenar las visitas por el contador de mayor a menor
         if (this.visitas.length > 0) {
           this.visitas.sort((a, b) => b.contador - a.contador);
@@ -42,9 +44,6 @@ export class HomePage implements OnInit {
         console.error('Error al obtener visitas:', error); // Manejo de errores
       }
     );
-  
-    // Cargar las tarjetas iniciales desde el servicio de tarjetas
-    this.cards = this.cardService.getCards();
   }
   
   toggleMenu() {

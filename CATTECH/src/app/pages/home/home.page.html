@@ -1,34 +1,33 @@
 <ion-content [fullscreen]="true">
 
-
   <div class="container-end">
     <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
   </div>
-  
 
   <div class="container_start-padding_down">
     <ion-text class="tittle">Soporte técnico</ion-text>
   </div>
 
   <div class="container_start-padding_down">
-      <ion-text routerLink="/tabs/historial" class="text">Ultimos servicios ></ion-text>
+    <ion-text routerLink="/tabs/historial" class="text">Ultimos servicios ></ion-text>
   </div>
 
-
   <div class="carrucel">
-    <ng-container *ngFor="let card of cards; let i = index">
-      <a *ngIf="i < maxCards" routerLink="/tabs/historial">
-        <ion-card [color]="card.color" class="text-center-white card-size">
+    <!-- Mostrar solo las primeras 3 visitas -->
+    <ng-container *ngFor="let visita of visitas | slice:0:3">
+      <a routerLink="/tabs/historial">
+        <ion-card class="text-center-white card-size">
           <ion-card-header>
-            <ion-card-title>{{ card.title }}</ion-card-title>
-            <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
+            <ion-card-title>{{ visita.titulo }}</ion-card-title>
+            <ion-card-subtitle>{{ visita.fecha }}</ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content>{{ card.content }}</ion-card-content>
+          <ion-card-content>{{ visita.estado }} - {{ visita.tipo_tarjeta }}</ion-card-content>
         </ion-card>
       </a>
     </ng-container>
 
-    <a *ngIf="cards.length > maxCards" routerLink="/tabs/historial">
+    <!-- Mostrar el botón "Ver más" solo si hay más de 3 visitas -->
+    <a *ngIf="visitas.length >= 4" routerLink="/tabs/historial">
       <ion-card color="success" class="text-center-white card-size">
         <ion-card-header>
           <ion-card-title>Ver más</ion-card-title>
@@ -38,39 +37,31 @@
     
   </div>
 
-  
+  <div class="container_start-padding_up">
+    <ion-text class="text">Herramientas de soporte</ion-text>
+  </div>
 
-    <div class="container_start-padding_up">
-      <ion-text class="text">Herramientas de soporte</ion-text>
-    </div>
+  <div class="container-center">
+    <ion-button routerLink="/visitas" class="style-btn">
+      <img src="assets/icon/agendar.png" alt="icon" class="icon-size-small" />
+      <ion-text class="text-center-white">Agendar visita</ion-text>
+    </ion-button>
 
-    <div class="container-center">
-      <ion-button routerLink="/visitas" class="style-btn">
-        <img src="assets/icon/agendar.png" alt="icon" class="icon-size-small" />
-        <ion-text class="text-center-white">Agendar visita</ion-text>
-      </ion-button>
+    <ion-button routerLink="/reciclar" class="style-btn">
+      <img src="assets/icon/reciclar.png" alt="icon" class="icon-size-small" />
+      <ion-text class="text-center-white">Reciclar aparato</ion-text>
+    </ion-button>
+  </div>
 
-      <ion-button routerLink="/cobertura" class="style-btn">
-        <img src="assets/icon/cobertura.png" alt="icon" class="icon-size-small" />
-        <ion-text class="text-center-white">Cobertura</ion-text>
-      </ion-button>
+  <div class="container_start-padding_up">
+    <ion-text class="text">Ayuda</ion-text>
+  </div>
 
-      <ion-button routerLink="/reciclar" class="style-btn">
-        <img src="assets/icon/reciclar.png" alt="icon" class="icon-size-small" />
-        <ion-text class="text-center-white">Reciclar aparato</ion-text>
-      </ion-button>
-    </div>
-    
-    <div class="container_start-padding_up">
-      <ion-text class="text">Ayuda</ion-text>
-    </div>
-
-    <a routerLink="/contacto" class="container-center">
-      <ion-button class="style-btn">
-        <img src="assets/icon/ayuda.png" alt="icon" class="icon-size-big" />
-        <ion-text class="text-center-white">Contáctate con nosotros</ion-text>
-      </ion-button>
-    </a>
-
+  <a routerLink="/contacto" class="container-center">
+    <ion-button class="style-btn">
+      <img src="assets/icon/ayuda.png" alt="icon" class="icon-size-big" />
+      <ion-text class="text-center-white">Contáctate con nosotros</ion-text>
+    </ion-button>
+  </a>
 
 </ion-content>

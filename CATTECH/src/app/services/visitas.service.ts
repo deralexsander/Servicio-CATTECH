@@ -5,18 +5,17 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { first, switchMap } from 'rxjs/operators';
 
 interface Visita {
-  id: string; // ID único generado por Firestore
-  contador: number; // Contador para las visitas
-  titulo: string;  // Título de la visita
+  id: string;           // ID único generado por Firestore
+  contador: number;     // Contador para las visitas
+  titulo: string;       // Título de la visita
   cliente: string;
   fecha: string;
   correo: string;
   hora: string;
   direccion: string;
   motivo: string;
-  imagenes: string[]; // URLs de las imágenes asociadas a la visita
-  estado: string; // "en espera" o "listo"
-  mensaje: string; // Mensaje adicional
+  estado: string;       // "en espera" o "listo"
+  tipo_tarjeta: string; // Nuevo campo para identificar el tipo de tarjeta
 }
 
 @Injectable({
@@ -35,22 +34,19 @@ export class VisitasService {
     return this.firestore.collection<Visita>(this.collectionName).doc(id).valueChanges();
   }
 
+  // Método para agregar una nueva visita
   async addVisita(visita: Visita): Promise<void> {
     const user = await this.afAuth.authState.pipe(first()).toPromise();
     if (user && user.email) {
       visita.correo = user.email;
 
-      // Inicializar el estado de la visita como "en espera"
+      // Inicializar valores por defecto
       visita.estado = 'en espera';
+      visita.tipo_tarjeta = 'visita'; // Establece el tipo de tarjeta como "visita"
 
       // Verificar que el título no esté vacío
       if (!visita.titulo || visita.titulo.trim() === '') {
         throw new Error('El título de la visita no puede estar vacío');
-      }
-
-      // Verificar que el mensaje no esté vacío o establecer un mensaje por defecto si lo está
-      if (!visita.mensaje) {
-        visita.mensaje = 'Sin mensaje'; // Mensaje por defecto
       }
 
       // Obtener el contador más alto de las visitas existentes del usuario
@@ -60,36 +56,36 @@ export class VisitasService {
 
       try {
         const visitasSnapshot = await visitasRef.get().toPromise();
-        let nuevoContador = 1; // Valor por defecto si no hay visitas previas
+        let nuevoContador = 1;
 
         if (visitasSnapshot && !visitasSnapshot.empty) {
-          // Encuentra el contador máximo y suma 1
           const contadores = visitasSnapshot.docs.map(doc => doc.data().contador);
           nuevoContador = Math.max(...contadores) + 1;
         }
 
-        // Asignar el nuevo contador a la visita
         visita.contador = nuevoContador;
 
-        // Agregar la visita a Firestore y obtener el ID del documento
+        // Agregar la visita a Firestore
         const docRef = await this.firestore.collection(this.collectionName).add(visita);
         console.log('Documento agregado con ID:', docRef.id);
 
-        // Actualizar el ID de la visita con el ID del documento
+        // Actualizar el ID del documento
         await docRef.update({ id: docRef.id });
       } catch (error) {
-        console.error('Error al obtener el contador de visitas:', error);
-        throw new Error('Error al obtener el contador de visitas');
+        console.error('Error al agregar la visita:', error);
+        throw new Error('Error al agregar la visita');
       }
     } else {
       throw new Error('Usuario no autenticado');
     }
   }
 
+  // Obtener todas las visitas
   getVisitas(): Observable<Visita[]> {
     return this.firestore.collection<Visita>(this.collectionName).valueChanges();
   }
 
+  // Obtener visitas del usuario autenticado
   getVisitasPorUsuario(): Observable<Visita[]> {
     return this.afAuth.authState.pipe(
       first(),
@@ -97,7 +93,7 @@ export class VisitasService {
         if (user && user.email) {
           return this.firestore
             .collection<Visita>(this.collectionName, ref =>
-              ref.where('correo', '==', user.email) // Filtra las visitas por el correo del usuario
+              ref.where('correo', '==', user.email)
             )
             .valueChanges();
         } else {
@@ -107,7 +103,26 @@ export class VisitasService {
     );
   }
 
-  // Método para actualizar el estado de una visita
+  // Obtener visitas filtradas por tipo de tarjeta
+  getVisitasPorTipo(tipo_tarjeta: string): Observable<Visita[]> {
+    return this.afAuth.authState.pipe(
+      first(),
+      switchMap(user => {
+        if (user && user.email) {
+          return this.firestore
+            .collection<Visita>(this.collectionName, ref =>
+              ref.where('correo', '==', user.email)
+                 .where('tipo_tarjeta', '==', tipo_tarjeta)
+            )
+            .valueChanges();
+        } else {
+          throw new Error('Usuario no autenticado');
+        }
+      })
+    );
+  }
+
+  // Actualizar el estado de una visita
   async updateEstado(id: string, estado: string): Promise<void> {
     try {
       await this.firestore.collection(this.collectionName).doc(id).update({ estado });
@@ -118,17 +133,24 @@ export class VisitasService {
     }
   }
 
+  // Actualizar tipo de tarjeta de una visita
+  async updateTipoTarjeta(id: string, tipo_tarjeta: string): Promise<void> {
+    try {
+      await this.firestore.collection(this.collectionName).doc(id).update({ tipo_tarjeta });
+      console.log('Tipo de tarjeta actualizado');
+    } catch (error) {
+      console.error('Error al actualizar el tipo de tarjeta:', error);
+      throw new Error('Error al actualizar el tipo de tarjeta');
+    }
+  }
+
+  // Actualizar una visita completa
   async updateVisita(id: string, visita: Visita): Promise<void> {
     try {
-      // Asegurarse de que el mensaje esté actualizado si se proporciona uno nuevo
-      if (visita.mensaje && visita.mensaje.trim() === '') {
-        throw new Error('El mensaje no puede estar vacío');
-      }
-
       await this.firestore.collection(this.collectionName).doc(id).update(visita);
       console.log('Visita actualizada');
     } catch (error) {
-      console.error('Error al actualizar la visita', error);
+      console.error('Error al actualizar la visita:', error);
       throw new Error('Error al actualizar la visita');
     }
   }
