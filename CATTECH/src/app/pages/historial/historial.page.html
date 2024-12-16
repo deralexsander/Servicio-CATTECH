@@ -1,35 +1,48 @@
 <ion-content [fullscreen]="true">
-  <!-- Contenedor fijo para la imagen y título -->
-  <div class="fixed-header">
-    <div class="container-end">
-      <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
-    </div>
-    
-    <div class="container_start-padding_down">
-      <ion-text class="tittle">Historial de resumenes</ion-text>
-    </div>
+  <div class="container-end">
+    <img routerLink="/perfil" [src]="user?.photoURL || 'assets/isotipos/logo perfil.png'" alt="logo" class="logo-size" />
   </div>
+
+  <div class="container_start-padding_down">
+    <ion-text class="tittle">Historial de Resúmenes</ion-text>
+  </div>
+
 
   <!-- Contenedor desplazable para las tarjetas -->
   <div class="scrollable-cards">
     <ion-card 
-      class="text-center-white card-size" 
-      *ngFor="let visita of visitas" 
+      class="card-minimalist" 
+      *ngFor="let visita of visitas"
       [ngClass]="{
         'en-espera': visita.estado === 'en espera',
         'listo': visita.estado === 'listo',
         'trabajando': visita.estado === 'trabajando'
       }">
-      <ion-card-header>
-        <ion-card-title>{{ visita.titulo }}</ion-card-title>
-        <ion-card-subtitle>{{ visita.fecha }}</ion-card-subtitle>
+      
+      <ion-card-header class="minimal-header">
+        <h2 class="card-title">{{ visita.titulo }}</h2>
+        <p class="card-date">{{ visita.fecha }}</p>
       </ion-card-header>
-      <ion-card-content>
-        <p>{{ visita.tipo_tarjeta }}</p>
-        <p>Cliente: {{ visita.cliente }}</p>
-        <p>Motivo: {{ visita.motivo }}</p>
-        <p>Estado: {{ visita.estado }}</p>
+
+      <ion-card-content class="card-content-minimal">
+        <div class="card-row">
+          <span><strong>Cliente:</strong> {{ visita.cliente }}</span>
+        </div>
+        <div class="card-row">
+          <span><strong>Motivo:</strong> {{ visita.motivo }}</span>
+        </div>
+        <div class="card-row">
+          <span><strong>Tipo:</strong> {{ visita.tipo_tarjeta }}</span>
+        </div>
+        <div class="card-row status-row">
+          <span><strong>Estado:</strong> {{ visita.estado }}</span>
+        </div>
       </ion-card-content>
     </ion-card>
+  </div>
+
+  <!-- Texto cuando no hay tarjetas -->
+  <div *ngIf="visitas.length === 0" class="no-cards-message">
+    <p>No tienes agendaciones</p>
   </div>
 </ion-content>

@@ -7,7 +7,7 @@
     <ion-text class="tittle">Soporte técnico</ion-text>
   </div>
 
-  <div class="container_start-padding_down">
+  <div class="container_start-padding_down" *ngIf="visitas.length >= 1" >
     <ion-text routerLink="/tabs/historial" class="text">Últimos servicios ></ion-text>
   </div>
 
@@ -16,20 +16,22 @@
     <ng-container *ngFor="let visita of visitas | slice:0:3">
       <a routerLink="/tabs/historial">
         <ion-card 
-          class="text-center-white card-size" 
+          class=" card-size" 
           [ngClass]="{
             'en-espera': visita.estado === 'en espera',
             'listo': visita.estado === 'listo',
             'trabajando': visita.estado === 'trabajando'
           }">
-          <ion-card-header>
-            <ion-text class="text-center-white">{{ visita.titulo }}</ion-text>
-          </ion-card-header>
+          <div class="container-center-paddingUp">
+            <ion-text class="title-white">{{ visita.titulo }}</ion-text>
+          </div>
           <ion-card-content>
-            <ion-text class="text-center-white-content">{{ visita.fecha }}</ion-text>
-          </ion-card-content>
-          <ion-card-content>
-            <ion-text class="text-center-white-content">{{ visita.estado }} - {{ visita.tipo_tarjeta }}</ion-text>
+            <div class="container-center">
+              <ion-text class="text-white">{{ visita.fecha }}</ion-text>
+            </div>
+            <div class="container-center">
+              <ion-text class="text-white">{{ visita.estado }} - {{ visita.tipo_tarjeta }}</ion-text>
+            </div>
           </ion-card-content>
         </ion-card>
       </a>
