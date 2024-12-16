@@ -40,7 +40,7 @@ export class ReciclarPage implements OnInit {
   async onSubmit() {
     if (this.reciclarForm.valid) {
       const visita = this.reciclarForm.value;
-      visita.tipo_tarjeta = 'donacion'; // Establece el tipo de tarjeta como "donación"
+      visita.tipo_tarjeta = 'Donación'; // Establece el tipo de tarjeta como "donación"
   
       try {
         await this.visitasService.addVisita(visita);

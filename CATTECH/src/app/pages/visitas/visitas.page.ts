@@ -47,7 +47,7 @@ export class VisitasPage implements OnInit {
     if (this.visitaForm.valid) {
       const visita = this.visitaForm.value;
       visita.imagenes = this.imagenes;
-      visita.tipo_tarjeta = 'visita'; // Establece el tipo de tarjeta como "visita"
+      visita.tipo_tarjeta = 'Visita'; // Establece el tipo de tarjeta como "visita"
   
       try {
         await this.visitasService.addVisita(visita);

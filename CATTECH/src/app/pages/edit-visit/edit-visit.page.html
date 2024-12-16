@@ -49,11 +49,12 @@
     </div>
 
     <div class="container-center-btn">
-      <ion-button shape="round" class="btn-1" type="submit" [disabled]="!visitaForm.valid">Enviar</ion-button>
+      <ion-button shape="round" class="btn-1" type="submit" [disabled]="!visitaForm.valid">Guardar</ion-button>
     </div>
 
   </form>
 
-  <!-- Botón para enviar correo -->
-  <ion-button shape="round" class="btn-1" (click)="enviarCorreo()">Mandar mensaje por correo</ion-button>
+  <div class="container-center-btn">
+    <ion-button shape="round" class="btn-1" (click)="enviarCorreo()">Mandar mensaje por correo</ion-button>
+  </div>
 </ion-content>

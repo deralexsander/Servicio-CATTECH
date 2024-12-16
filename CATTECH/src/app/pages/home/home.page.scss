@@ -69,15 +69,6 @@ a{
   font-family: 'Franklin Gothic Medium';
 }
 
-
-/* tamaño tarjetas */
-.card-size{
-  width: 160px; /* Estirar a los lados */
-  height: 125px; /* Estirar para abajo */
-  border-radius: 15px; /* modificar los bordes */
-
-}
-
 /* carrucel tarjetas */
 .carrucel {
   display: flex;
@@ -103,7 +94,7 @@ a{
 .text-white {
   text-align: center;
   font-family: 'Arial', sans-serif;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 /* texto centrado blanco */
@@ -116,8 +107,8 @@ a{
 
 /* tamaño tarjetas */
 .card-size {
-  width: 180px; /* Estirar a los lados */
-  height: 145px; /* Estirar para abajo */
+  width: 220px; /* Estirar a los lados */
+  height: 155px; /* Estirar para abajo */
   border-radius: 15px; /* modificar los bordes */
 }
 

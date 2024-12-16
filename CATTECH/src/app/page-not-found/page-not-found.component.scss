@@ -1,15 +1,60 @@
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3880ff; /* Color azul de Ionic */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
+/* Contenedor principal */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9; /* Fondo claro */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Título de error */
+.error-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #ff6b6b; /* Rojo brillante para el título */
+  margin-bottom: 20px;
+}
+
+/* Mensaje de error */
+.error-message {
+  font-size: 1.4em;
+  color: #333; /* Color gris oscuro */
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilo del botón */
+.error-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #3880ff; /* Color azul */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo del botón al pasar el mouse */
+.error-button:hover {
+  background-color: #3171e0; /* Color más oscuro en hover */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .button:hover {
-    background-color: #3171e0; /* Color más oscuro en hover */
+  to {
+    opacity: 1;
   }
-  
+}
+
+.error-container {
+  animation: fadeIn 1s ease-out;
+}
