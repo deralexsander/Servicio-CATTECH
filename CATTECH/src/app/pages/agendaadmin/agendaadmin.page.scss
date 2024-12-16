@@ -1,115 +1,106 @@
-/* fondo */
+/* Fondo general */
 ion-content {
-    --background:#c4dee7;
+  --background:#c4dee7;
 }
-  
-  /* sacar el subrrayado */
-a{
-    text-decoration: none;
+
+/* sacando subrayado de enlaces */
+a {
+  text-decoration: none;
 }
+
 .container-start {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    display: inline-block;
-    padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
-  }
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  display: inline-block;
+  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+}
 
-  /* titulos-mas pequeños */
+/* titulos-mas pequeños */
 .text{
-    color: #413f3f;
-    font-size: 1.6em;
-    font-family: 'Franklin Gothic Medium';
-  }
-
-/* fondo */
-ion-content {
-    --background:#c4dee7;
-}
-.no-scroll {
-    --overflow: hidden;
-  }
-
-/* sacar el subrrayado */
-a{
-    text-decoration: none;
+  color: #413f3f;
+  font-size: 1.6em;
+  font-family: 'Franklin Gothic Medium';
 }
 
-/* container textos */
-.container_start-padding_down {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
+/* Contenedor de tarjetas */
+.scrollable-cards {
+padding: 10px;
 }
 
-/* titulos */
-.tittle {
-    color: #413f3f;
-    font-size: 2.0em;
-    font-family: 'Franklin Gothic Medium';
+/* Tarjeta minimalista */
+.card-minimalist {
+border-radius: 10px;
+margin: 10px 0;
+transition: transform 0.2s ease-in-out;
+color: #ffffff; /* Texto en blanco por claridad */
+cursor: pointer; /* Indicamos que es clickeable */
 }
 
-/* tamaño logo */
-.logo-size {
-    width: 12%;
-    height: 12%;
+.card-minimalist:hover {
+transform: translateY(-5px); /* Efecto de elevación */
 }
 
-/* container logo */
-.container-end {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    padding: 20px 25px 0px 0px; /* | arriba || derecha || abajo || izquierda | */
+/* Encabezado de tarjeta */
+.minimal-header {
+padding: 10px 15px;
+color: inherit;
+font-family: 'Arial', sans-serif;
 }
 
-  /* tamaño logo */
-.logo-size {
-    width: 12%;
-    height: 12%;
-    border-radius: 50%; /* Hace que la imagen sea circular */
-    object-fit: cover; /* Asegura que la imagen se recorte correctamente */
-    overflow: hidden; /* Evita que partes de la imagen se desborden */
+.card-title {
+font-size: 1.2rem;
+margin: 0;
 }
 
-
-.style-segment{
-    padding: 0px 20px 0px 20px; /* | arriba || derecha || abajo || izquierda | */
+.card-date {
+font-size: 0.9rem;
+opacity: 0.8;
 }
 
-.style-btn{
-    background: white;
+/* Contenido de tarjeta */
+.card-content-minimal {
+padding: 10px 15px;
 }
 
-.only-border-left{
-    border-radius:0px 15px 15px 0px; /* | arriba izquerida || arriba derecha || abajo derecha || abajo izquierda | */
-}
-.only-border-right{
-    border-radius:15px 0px 0px 15px; /* | arriba izquerida || arriba derecha || abajo derecha || abajo izquierda | */
+.card-row {
+margin-bottom: 8px;
+font-size: 0.95rem;
 }
 
-.text-center-black{
-  text-align: center;
-  color: rgb(3, 3, 3);
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+.status-row {
+font-weight: bold;
 }
 
+/* Texto "Editar >" a la derecha */
+.editar-btn {
+text-align: right;
+padding: 10px 15px;
+font-size: 1.1rem;
+color: #4e88a2; /* Color que puede resaltar bien */
+font-weight: bold;
+}
 
-  
-
+/* Estados con colores */
 .en-espera {
-    background-color: #ebe815;
-    color: white; /* Para mejorar la legibilidad */
-  }
-  
-  .listo {
-    background-color: rgb(28, 197, 28);
-    color: white; /* Para mejorar la legibilidad */
-  }
-  
-  .trabajando {
-    background-color: red;
-    color: white; /* Para mejorar la legibilidad */
-  }
-  
+background-color: #f7e16a; /* Amarillo claro */
+color: #5c5c00;
+}
+
+.listo {
+background-color: #98d88e; /* Verde claro */
+color: #2b5e2b;
+}
+
+.trabajando {
+background-color: #f59c9c; /* Rojo claro */
+color: #761919;
+}
+
+/* Mensaje cuando no hay tarjetas */
+.no-cards-message {
+text-align: center;
+font-size: 1.1rem;
+color: #555;
+margin-top: 20px;
+}

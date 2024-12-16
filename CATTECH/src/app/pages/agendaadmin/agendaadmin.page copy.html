@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <a routerLink="/tabs/puntos" class="container-start">
+    <ion-text class="text">< Atras</ion-text>
+  </a>
+
+  <ion-content>
+    <ion-card 
+      class="text-center-white card-size" 
+      *ngFor="let visita of visitas" 
+      [ngClass]="{
+        'en-espera': visita.estado === 'en espera',
+        'listo': visita.estado === 'listo',
+        'trabajando': visita.estado === 'trabajando'
+      }">
+      <ion-card-header>
+        <ion-card-title>{{ visita.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ visita.fecha }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Cliente: {{ visita.cliente }}</p>
+        <p>Cliente: {{ visita.correo }}</p>
+        <p>Motivo: {{ visita.motivo }}</p>
+        <p>Estado: {{ visita.estado }}</p>
+        <!-- Botón de edición -->
+        <ion-button [routerLink]="['/edit-visit', visita.id]">Editar</ion-button>
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>
