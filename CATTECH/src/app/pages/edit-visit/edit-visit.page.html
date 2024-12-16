@@ -1,44 +1,59 @@
 <ion-content [fullscreen]="true">
-  <a routerLink="/agendaadmin" class="container-start">
-    <ion-text class="text">< Listo</ion-text>
+
+  <a routerLink="/tabs/puntos" class="container-start">
+    <ion-text class="text">&lt; Atrás</ion-text>
   </a>
 
   <form [formGroup]="visitaForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label>Cliente</ion-label>
-      <ion-input formControlName="cliente" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>correo</ion-label>
-      <ion-input formControlName="correo" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Título</ion-label>
-      <ion-input formControlName="titulo" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Fecha</ion-label>
-      <ion-input formControlName="fecha" type="date"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Hora</ion-label>
-      <ion-input formControlName="hora" type="time"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Dirección</ion-label>
-      <ion-input formControlName="direccion" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Motivo</ion-label>
-      <ion-input formControlName="motivo" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Estado</ion-label>
-      <ion-input formControlName="estado" type="text"></ion-input>
-    </ion-item>
-    <ion-button expand="full" type="submit" [disabled]="!visitaForm.valid">Actualizar Visita</ion-button>
+
+    <div class="container-input">
+      <ion-text>Cliente</ion-text>
+      <ion-input fill="outline" type="text" formControlName="cliente" required></ion-input>
+    </div>
+
+    <div class="container-select">
+      <ion-text>Título</ion-text>
+      <ion-select formControlName="titulo" label-placement="stacked" placeholder="Selecciona un título" fill="outline">
+        <ion-select-option value="Reparación">Reparación</ion-select-option>
+        <ion-select-option value="Mantenimiento">Mantenimiento</ion-select-option>
+        <ion-select-option value="Revisión">Revisión</ion-select-option>
+        <ion-select-option value="Donar">Donar</ion-select-option>
+      </ion-select>
+    </div>
+
+    <div class="container-input">
+      <ion-text>Fecha</ion-text>
+      <ion-input class="ion-input-date-and-time" fill="outline" type="date" formControlName="fecha" required></ion-input>
+    </div>
+    <div class="container-input">
+      <ion-text>Hora</ion-text>
+      <ion-input class="ion-input-date-and-time" fill="outline" type="time" formControlName="hora" required></ion-input>
+    </div>
+    <div class="container-input">
+      <ion-text>Dirección</ion-text>
+      <ion-input fill="outline" type="text" formControlName="direccion" required></ion-input>
+    </div>
+
+    <div class="container-input">
+      <ion-text>Motivo</ion-text>
+      <ion-input fill="outline" type="text" formControlName="motivo" required></ion-input>
+    </div>
+
+    <div class="container-select">
+      <ion-text>Estado</ion-text>
+      <ion-select formControlName="estado" label-placement="stacked" placeholder="Selecciona un estado" fill="outline">
+        <ion-select-option value="En espera">En espera</ion-select-option>
+        <ion-select-option value="Trabajando">Trabajando</ion-select-option>
+        <ion-select-option value="Listo">Listo</ion-select-option>
+      </ion-select>
+    </div>
+
+    <div class="container-center-btn">
+      <ion-button shape="round" class="btn-1" type="submit" [disabled]="!visitaForm.valid">Enviar</ion-button>
+    </div>
+
   </form>
 
   <!-- Botón para enviar correo -->
-  <ion-button expand="full" (click)="enviarCorreo()">Mandar mensaje por correo</ion-button>
+  <ion-button shape="round" class="btn-1" (click)="enviarCorreo()">Mandar mensaje por correo</ion-button>
 </ion-content>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastController } from '@ionic/angular'; 
+import { ToastController } from '@ionic/angular';
 import { VisitasService } from 'src/app/services/visitas.service';
+import { Router } from '@angular/router'; // Importa Router
 
 @Component({
   selector: 'app-reciclar',
@@ -14,7 +15,8 @@ export class ReciclarPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private visitasService: VisitasService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router // Inyecta Router aquí
   ) {}
 
   ngOnInit() {
@@ -62,6 +64,7 @@ export class ReciclarPage implements OnInit {
         });
         await toast.present();
       }
+      this.router.navigate(['/tabs/home']); // Redirige a la página de inicio
     }
   }  
 }

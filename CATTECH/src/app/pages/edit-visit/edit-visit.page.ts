@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router'; // Importa Router
 import { VisitasService } from 'src/app/services/visitas.service';
 import { ToastController } from '@ionic/angular';
 import { firstValueFrom } from 'rxjs';
@@ -18,7 +18,8 @@ export class EditVisitPage implements OnInit {
     private readonly fb: FormBuilder,
     private readonly activatedRoute: ActivatedRoute,
     private readonly visitasService: VisitasService,
-    private readonly toastController: ToastController
+    private readonly toastController: ToastController,
+    private readonly router: Router // Inyecta el Router aquí
   ) {}
 
   ngOnInit() {
@@ -58,6 +59,9 @@ export class EditVisitPage implements OnInit {
           color: 'success'
         });
         await toast.present();
+
+        // Redirigir a la página de "agendaadmin"
+        this.router.navigate(['/agendaadmin']); // Agregado para redirigir
       } catch (error) {
         console.error('Error al actualizar la visita:', error);
         const toast = await this.toastController.create({

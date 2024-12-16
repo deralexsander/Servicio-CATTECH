@@ -41,7 +41,7 @@ export class VisitasService {
       visita.correo = user.email;
 
       // Inicializar valores por defecto
-      visita.estado = 'en espera';
+      visita.estado = 'En espera';
 
       // Verificar que el título no esté vacío
       if (!visita.titulo || visita.titulo.trim() === '') {

@@ -5,6 +5,7 @@ import { Servicio } from 'src/app/clases/servicio';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { VisitasService } from 'src/app/services/visitas.service';
 import { ToastController } from '@ionic/angular'; // Importa el ToastController
+import { Router } from '@angular/router'; // Importa el Router para redirección
 
 @Component({
   selector: 'app-visitas',
@@ -20,7 +21,8 @@ export class VisitasPage implements OnInit {
     private fb: FormBuilder,
     private databaseService: DatabaseService,
     private visitasService: VisitasService,
-    private toastController: ToastController // Inyecta el ToastController
+    private toastController: ToastController, // Inyecta el ToastController
+    private router: Router // Inyecta el Router
   ) {}
 
   ngOnInit() {
@@ -58,6 +60,9 @@ export class VisitasPage implements OnInit {
         });
         await toast.present();
   
+        // Redirige a la página tabs/home después de enviar el formulario
+        this.router.navigate(['/tabs/home']);
+        
         this.visitaForm.reset();
         this.imagenes = [];
       } catch (error) {

@@ -10,9 +10,9 @@
       class="card-minimalist" 
       *ngFor="let visita of visitas"
       [ngClass]="{
-        'en-espera': visita.estado === 'en espera',
-        'listo': visita.estado === 'listo',
-        'trabajando': visita.estado === 'trabajando'
+        'en-espera': visita.estado === 'En espera',
+        'listo': visita.estado === 'Listo',
+        'trabajando': visita.estado === 'Trabajando'
       }" 
       [routerLink]="['/edit-visit', visita.id]">
       
