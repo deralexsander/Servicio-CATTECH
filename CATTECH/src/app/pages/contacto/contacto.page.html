@@ -1,11 +1,15 @@
 <ion-content [fullscreen]="true">
-
+  <!-- Volver -->
   <a routerLink="/tabs/home" class="container-start">
-    <ion-text class="title">< Volver </ion-text>
+    <ion-text class="title">&lt; Volver</ion-text>
   </a>
 
-  <ion-text class="title">Contacto</ion-text>
+  <!-- Título de la sección -->
+  <div class="container-center">
+    <ion-text class="title">Contacto</ion-text>
+  </div>
 
+  <!-- Descripción -->
   <div class="container-center">
     <ion-text class="text">Aquí podrás encontrar información para contactar en caso de cualquier problema.</ion-text>
   </div>
@@ -13,23 +17,26 @@
   <!-- Número de teléfono: generar llamada directa -->
   <div class="container-center">
     <ion-text class="text">
-      <a href="tel:+56900000000">+569 00000000</a>
+      <span>Presiona para poder contactarnos: </span>
+      <div>
+        <a href="tel:+56940846441" class="contact-link">+569 40846441</a>
+      </div>
     </ion-text>
   </div>
 
-  <!-- Correo electrónico: copiar al portapapeles -->
+  <!-- Correo electrónico: botón para abrir correo -->
   <div class="container-center">
-    <ion-text class="text">Correo: aqui va el correo</ion-text>
-    
+    <ion-text class="text">Correo: </ion-text>
+    <ion-button class="btn-email" fill="solid" href="mailto:Nia.munoz@duocuc.cl">
+      <ion-text class="btn-text">Enviar Correo</ion-text>
+    </ion-button>
   </div>
 
   <!-- Instagram: redirigir a perfil de Instagram -->
   <div class="container-center">
-    <ion-text class="text">
-      <a href="https://www.instagram.com/tu_perfil" target="_blank">
-        Instagram
-      </a>
-    </ion-text>
+    <ion-text class="text">Búscanos en redes sociales:</ion-text>
+    <a href="https://www.instagram.com/cat_tech__" target="_blank">
+      <ion-icon name="logo-instagram" size="large" class="icon-instagram"></ion-icon>
+    </a>
   </div>
-
 </ion-content>

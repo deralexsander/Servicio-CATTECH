@@ -1,47 +1,93 @@
-/* fondo */
+/* Fondo */
 ion-content {
-    --background:#c4dee7;
-}
-  
-  /* sacar el subrrayado */
-a{
-    text-decoration: none;
+  --background: #c4dee7;
 }
 
+/* sacar el subrrayado */
+a{
+  text-decoration: none;
+}
+
+/* Estilo de los enlaces */
+a.contact-link {
+  text-decoration: none;
+  color: #4A90E2; /* Azul atractivo */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a.contact-link:hover {
+  color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Estilo para el icono de Instagram */
+.icon-instagram {
+  color: #E1306C; /* Color característico de Instagram */
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.icon-instagram:hover {
+  transform: scale(1.2); /* Agrandar el icono al pasar el mouse */
+}
+
+/* Botón de correo */
+.btn-email {
+  background-color: #4A90E2;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-email:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.btn-text {
+  color: white;
+  font-size: 1.2em;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+/* Contenedor para los textos */
 .container-start {
   display: flex;
   align-items: start;
   flex-direction: column;
-  display: inline-block;
-  padding: 30px 12px 12px 12px; /* | arriba || derecha || abajo || izquierda | */
+  padding: 30px 12px 12px 12px;
 }
 
-/* titulos-mas pequeños */
-.text{
+/* Títulos grandes */
+.title {
+  color: #413f3f;
+  font-size: 2.0em;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  margin-bottom: 10px;
+}
+
+/* Títulos pequeños */
+.text {
   color: #413f3f;
   text-align: center;
   font-size: 1.0em;
-  font-family: 'Franklin Gothic Medium';
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  margin: 5px 0;
 }
 
-/* titulos */
-.tittle {
-  color: #413f3f;
-  font-size: 2.0em;
-  font-family: 'Franklin Gothic Medium';
-}
-
-/* container textos */
-.container_start-padding_down {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 0px 0px 20px 10px; /* | arriba || derecha || abajo || izquierda | */
-}
-
+/* Contenedores centrados */
 .container-center {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 5px 0px 5px 0px; /* | arriba || derecha || abajo || izquierda | */
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Padding adicional para las secciones */
+.container_start-padding_down {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0px 0px 20px 10px;
 }
